@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/lesson1.adding/lesson1.adding.iml" filepath="$PROJECT_DIR$/lesson1.adding/lesson1.adding.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson1.computer/lesson1.computer.iml" filepath="$PROJECT_DIR$/lesson1.computer/lesson1.computer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson1.counterIncrementor/lesson1.counterIncrementor.iml" filepath="$PROJECT_DIR$/lesson1.counterIncrementor/lesson1.counterIncrementor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson1.temperatureConverter/lesson1.temperatureConverter.iml" filepath="$PROJECT_DIR$/lesson1.temperatureConverter/lesson1.temperatureConverter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson1.thread/lesson1.thread.iml" filepath="$PROJECT_DIR$/lesson1.thread/lesson1.thread.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson2.synchronization1/lesson2.synchronization1.iml" filepath="$PROJECT_DIR$/lesson2.synchronization1/lesson2.synchronization1.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson2.synchronization2/lesson2.synchronization2.iml" filepath="$PROJECT_DIR$/lesson2.synchronization2/lesson2.synchronization2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson2.synchronization3/lesson2.synchronization3.iml" filepath="$PROJECT_DIR$/lesson2.synchronization3/lesson2.synchronization3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson3.trafficLight/lesson3.trafficLight.iml" filepath="$PROJECT_DIR$/lesson3.trafficLight/lesson3.trafficLight.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson4.temperatureMeasurement/lesson4.temperatureMeasurement.iml" filepath="$PROJECT_DIR$/lesson4.temperatureMeasurement/lesson4.temperatureMeasurement.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson4.temperaturePresenter/lesson4.temperaturePresenter.iml" filepath="$PROJECT_DIR$/lesson4.temperaturePresenter/lesson4.temperaturePresenter.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson4.trafficLight/lesson4.trafficLight.iml" filepath="$PROJECT_DIR$/lesson4.trafficLight/lesson4.trafficLight.iml" />
-      <module fileurl="file://$PROJECT_DIR$/lesson5.uppercase/lesson5.uppercase.iml" filepath="$PROJECT_DIR$/lesson5.uppercase/lesson5.uppercase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.threads.adding/1.threads.adding.iml" filepath="$PROJECT_DIR$/1.threads.adding/1.threads.adding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.threads.computer/1.threads.computer.iml" filepath="$PROJECT_DIR$/1.threads.computer/1.threads.computer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.threads.counterIncrementor/1.threads.counterIncrementor.iml" filepath="$PROJECT_DIR$/1.threads.counterIncrementor/1.threads.counterIncrementor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.threads.temperatureConverter/1.threads.temperatureConverter.iml" filepath="$PROJECT_DIR$/1.threads.temperatureConverter/1.threads.temperatureConverter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/1.threads.thread/1.threads.thread.iml" filepath="$PROJECT_DIR$/1.threads.thread/1.threads.thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization1/2.threads2.synchronization1.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization1/2.threads2.synchronization1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" filepath="$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.temperatureMeasurement/3.b.observerPattern.temperatureMeasurement.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.temperatureMeasurement/3.b.observerPattern.temperatureMeasurement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.temperaturePresenter/3.b.observerPattern.temperaturePresenter.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.temperaturePresenter/3.b.observerPattern.temperaturePresenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.trafficLight/3.b.observerPattern.trafficLight.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.trafficLight/3.b.observerPattern.trafficLight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4.statePattern.mobilePhone/4.statePattern.mobilePhone.iml" filepath="$PROJECT_DIR$/4.statePattern.mobilePhone/4.statePattern.mobilePhone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5.mvvm.uppercase/5.mvvm.uppercase.iml" filepath="$PROJECT_DIR$/5.mvvm.uppercase/5.mvvm.uppercase.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdj2.iml" filepath="$PROJECT_DIR$/sdj2.iml" />
     </modules>
   </component>
