@@ -3,6 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/lesson1.adding/lesson1.adding.iml" filepath="$PROJECT_DIR$/lesson1.adding/lesson1.adding.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson1.computer/lesson1.computer.iml" filepath="$PROJECT_DIR$/lesson1.computer/lesson1.computer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson1.counterIncrementor/lesson1.counterIncrementor.iml" filepath="$PROJECT_DIR$/lesson1.counterIncrementor/lesson1.counterIncrementor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson1.temperatureConverter/lesson1.temperatureConverter.iml" filepath="$PROJECT_DIR$/lesson1.temperatureConverter/lesson1.temperatureConverter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson1.thread/lesson1.thread.iml" filepath="$PROJECT_DIR$/lesson1.thread/lesson1.thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson2.synchronization1/lesson2.synchronization1.iml" filepath="$PROJECT_DIR$/lesson2.synchronization1/lesson2.synchronization1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson2.synchronization2/lesson2.synchronization2.iml" filepath="$PROJECT_DIR$/lesson2.synchronization2/lesson2.synchronization2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson2.synchronization3/lesson2.synchronization3.iml" filepath="$PROJECT_DIR$/lesson2.synchronization3/lesson2.synchronization3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson3.trafficLight/lesson3.trafficLight.iml" filepath="$PROJECT_DIR$/lesson3.trafficLight/lesson3.trafficLight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson4.temperatureMeasurement/lesson4.temperatureMeasurement.iml" filepath="$PROJECT_DIR$/lesson4.temperatureMeasurement/lesson4.temperatureMeasurement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson4.temperaturePresenter/lesson4.temperaturePresenter.iml" filepath="$PROJECT_DIR$/lesson4.temperaturePresenter/lesson4.temperaturePresenter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson4.trafficLight/lesson4.trafficLight.iml" filepath="$PROJECT_DIR$/lesson4.trafficLight/lesson4.trafficLight.iml" />
       <module fileurl="file://$PROJECT_DIR$/lesson5.uppercase/lesson5.uppercase.iml" filepath="$PROJECT_DIR$/lesson5.uppercase/lesson5.uppercase.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdj2.iml" filepath="$PROJECT_DIR$/sdj2.iml" />
     </modules>
