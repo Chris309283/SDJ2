@@ -1,11 +1,13 @@
 import core.ViewHandler;
+import core.ViewModelFactory;
 import javafx.stage.Stage;
 
 public class UppercaseApp extends javafx.application.Application
 {
   @Override public void start(Stage stage) throws Exception
   {
-    ViewHandler vh = new ViewHandler();
+    ViewModelFactory vmf = new ViewModelFactory();
+    ViewHandler vh = new ViewHandler(vmf);
     vh.start();
   }
 }

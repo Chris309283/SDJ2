@@ -14,7 +14,9 @@
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.temperatureMeasurement/3.b.observerPattern.temperatureMeasurement.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.temperatureMeasurement/3.b.observerPattern.temperatureMeasurement.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.temperaturePresenter/3.b.observerPattern.temperaturePresenter.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.temperaturePresenter/3.b.observerPattern.temperaturePresenter.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.trafficLight/3.b.observerPattern.trafficLight.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.trafficLight/3.b.observerPattern.trafficLight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4.statePattern.foxController/4.statePattern.foxController.iml" filepath="$PROJECT_DIR$/4.statePattern.foxController/4.statePattern.foxController.iml" />
       <module fileurl="file://$PROJECT_DIR$/4.statePattern.mobilePhone/4.statePattern.mobilePhone.iml" filepath="$PROJECT_DIR$/4.statePattern.mobilePhone/4.statePattern.mobilePhone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4.statePattern.radiator/4.statePattern.radiator.iml" filepath="$PROJECT_DIR$/4.statePattern.radiator/4.statePattern.radiator.iml" />
       <module fileurl="file://$PROJECT_DIR$/5.mvvm.uppercase/5.mvvm.uppercase.iml" filepath="$PROJECT_DIR$/5.mvvm.uppercase/5.mvvm.uppercase.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdj2.iml" filepath="$PROJECT_DIR$/sdj2.iml" />
     </modules>
