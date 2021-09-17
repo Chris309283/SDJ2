@@ -8,6 +8,7 @@ public class UppercaseViewModel
   private StringProperty request;
   private StringProperty reply;
   private StringProperty error;
+  private UppercaseViewModel viewModel;
 
   public UppercaseViewModel()
   {
@@ -38,6 +39,6 @@ public class UppercaseViewModel
 
   public void init(UppercaseViewModel uppercaseVM)
   {
-    
+    this.viewModel = uppercaseVM;
   }
 }

@@ -1,13 +1,15 @@
 package temperature.view;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
+import temperature.mediator.Listener;
 import temperature.mediator.TemperatureModel;
 import temperature.model.Temperature;
 
-public class TemperatureViewController
+public class TemperatureViewController implements Listener
 {
    @FXML private Label outputLabel;
    @FXML private TextField filterField;
@@ -28,6 +30,7 @@ public class TemperatureViewController
       this.model = model;
       this.root = root;
       thermometerId = null;
+      model.addListener(this);
    }
 
    public void reset()
@@ -75,4 +78,8 @@ public class TemperatureViewController
       updateButtonPressed();
    }
 
+   @Override public void update(Object arg)
+   {
+      Platform.runLater(() ->        outputLabel.setText(arg.toString()));
+   }
 }
