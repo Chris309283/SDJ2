@@ -1,10 +1,10 @@
-package core;
+package uppercase.core;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import view.uppercase.UppercaseViewModel;
+import uppercase.view.uppercase.UppercaseViewController;
 
 import java.io.IOException;
 
@@ -29,14 +29,14 @@ public class ViewHandler
   {
     if (uppercaseScene == null)
     {
+
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../view/uppercase/UppercaseView.fxml"));
         Parent root = loader.load();
-        UppercaseViewModel ctrl = loader.getController();
+        UppercaseViewController ctrl = loader.getController();
         ctrl.init(vmf.getUppercaseVM());
-
         stage.setTitle("Upper Case");
         uppercaseScene = new Scene(root);
       }
@@ -44,9 +44,13 @@ public class ViewHandler
       {
         e.printStackTrace();
       }
-      stage.setScene(uppercaseScene);
-      stage.show();
     }
+    stage.setScene(uppercaseScene);
+    stage.show();
   }
 
+  public void openLogView()
+  {
+
   }
+}

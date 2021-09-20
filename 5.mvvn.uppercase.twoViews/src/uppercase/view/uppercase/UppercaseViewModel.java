@@ -1,17 +1,19 @@
-package view.uppercase;
+package uppercase.view.uppercase;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import uppercase.model.TextConverter;
 
 public class UppercaseViewModel
 {
+  private TextConverter textConverter;
   private StringProperty request;
   private StringProperty reply;
   private StringProperty error;
-  private UppercaseViewModel viewModel;
 
-  public UppercaseViewModel()
+  public UppercaseViewModel(TextConverter textConverter)
   {
+    this.textConverter = textConverter;
     request = new SimpleStringProperty();
     reply = new SimpleStringProperty();
     error = new SimpleStringProperty();
@@ -19,7 +21,19 @@ public class UppercaseViewModel
 
   public void convert()
   {
-    System.out.println("Hello from VM");
+  String input = request.get();
+  if (input != null && !"".equals(input))
+  {
+    error.set("");
+    String result = textConverter.toUppercase(input);
+    reply.set(result);
+    textConverter.addLog("Converted: "+input);
+  }
+  else
+  {
+    reply.set("");
+    error.set("Source Text is Empty");
+  }
   }
 
   public StringProperty errorProperty()
@@ -35,10 +49,5 @@ public class UppercaseViewModel
   public StringProperty replyProperty()
   {
     return reply;
-  }
-
-  public void init(UppercaseViewModel uppercaseVM)
-  {
-    this.viewModel = uppercaseVM;
   }
 }
