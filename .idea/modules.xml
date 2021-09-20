@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" filepath="$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.doctorsWaitingRoom/3.b.observerPattern.doctorsWaitingRoom.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.doctorsWaitingRoom/3.b.observerPattern.doctorsWaitingRoom.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.temperatureMeasurement/3.b.observerPattern.temperatureMeasurement.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.temperatureMeasurement/3.b.observerPattern.temperatureMeasurement.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.temperaturePresenter/3.b.observerPattern.temperaturePresenter.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.temperaturePresenter/3.b.observerPattern.temperaturePresenter.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.trafficLight/3.b.observerPattern.trafficLight.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.trafficLight/3.b.observerPattern.trafficLight.iml" />
@@ -18,6 +19,8 @@
       <module fileurl="file://$PROJECT_DIR$/4.statePattern.mobilePhone/4.statePattern.mobilePhone.iml" filepath="$PROJECT_DIR$/4.statePattern.mobilePhone/4.statePattern.mobilePhone.iml" />
       <module fileurl="file://$PROJECT_DIR$/4.statePattern.radiator/4.statePattern.radiator.iml" filepath="$PROJECT_DIR$/4.statePattern.radiator/4.statePattern.radiator.iml" />
       <module fileurl="file://$PROJECT_DIR$/5.mvvm.uppercase/5.mvvm.uppercase.iml" filepath="$PROJECT_DIR$/5.mvvm.uppercase/5.mvvm.uppercase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5.mvvn.uppercase2/5.mvvn.uppercase2.iml" filepath="$PROJECT_DIR$/5.mvvn.uppercase2/5.mvvn.uppercase2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignment.1/Assignment.1.iml" filepath="$PROJECT_DIR$/Assignment.1/Assignment.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/sdj2.iml" filepath="$PROJECT_DIR$/sdj2.iml" />
     </modules>
   </component>
