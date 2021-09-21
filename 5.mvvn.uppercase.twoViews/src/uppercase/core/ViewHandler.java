@@ -36,7 +36,7 @@ public class ViewHandler
         loader.setLocation(getClass().getResource("../view/uppercase/UppercaseView.fxml"));
         Parent root = loader.load();
         UppercaseViewController ctrl = loader.getController();
-        ctrl.init(vmf.getUppercaseVM());
+        ctrl.init(this,vmf.getUppercaseVM());
         stage.setTitle("Upper Case");
         uppercaseScene = new Scene(root);
       }
@@ -51,6 +51,7 @@ public class ViewHandler
 
   public void openLogView()
   {
+
 
   }
 }
