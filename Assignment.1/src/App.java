@@ -2,7 +2,7 @@ import external.ExternalTemperature;
 import external.Thermometer;
 import javafx.stage.Stage;
 
-import viewmodel.*;
+import core.*;
 
 public class App extends javafx.application.Application
 {

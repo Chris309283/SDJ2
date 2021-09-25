@@ -6,6 +6,7 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import mediator.TemperatureHubModel;
 import javafx.application.Platform;
+import model.temperature.Temperature;
 
 import java.beans.PropertyChangeEvent;
 
@@ -28,7 +29,7 @@ public class TemperatureViewModel
     this.t2Temp = new SimpleDoubleProperty();
     this.temp = new SimpleDoubleProperty();
 
-    this.radiator= new SimpleIntegerProperty();
+    this.radiator = new SimpleIntegerProperty();
     model.addPropertyChangeListener(this::updateValues);
   }
 
@@ -41,18 +42,21 @@ public class TemperatureViewModel
 
   private void updateTemps(PropertyChangeEvent evt)
   {
-    Platform.runLater(()->{
+    System.out.println("vm " + evt.getPropertyName());
+
+    Platform.runLater(() -> {
+      Temperature t = (Temperature) evt.getNewValue();
       if (evt.getPropertyName().equals("t0Temp"))
       {
-        t0Temp.setValue((double) evt.getNewValue());
+        t0Temp.setValue(t.getTemp());
       }
       if (evt.getPropertyName().equals("t1Temp"))
       {
-        t1Temp.setValue((double) evt.getNewValue());
+        t1Temp.setValue(t.getTemp());
       }
       if (evt.getPropertyName().equals("t2Temp"))
       {
-        t2Temp.setValue((double) evt.getNewValue());
+        t2Temp.setValue(t.getTemp());
       }
     });
   }

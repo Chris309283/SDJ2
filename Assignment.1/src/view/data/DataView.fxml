@@ -28,7 +28,7 @@
             </HBox>
             <HBox prefHeight="313.0" prefWidth="537.0">
                <children>
-                  <LineChart prefHeight="301.0" prefWidth="534.0">
+                  <LineChart fx:id="lineChart" prefHeight="301.0" prefWidth="534.0">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
@@ -52,7 +52,7 @@
             </Label>
          </children>
       </VBox>
-      <Button mnemonicParsing="false" prefHeight="52.0" prefWidth="68.0" text="Back">
+      <Button mnemonicParsing="false" onAction="#backButton" prefHeight="52.0" prefWidth="68.0" text="Back">
          <VBox.margin>
             <Insets bottom="20.0" />
          </VBox.margin>
