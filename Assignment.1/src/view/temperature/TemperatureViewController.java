@@ -17,9 +17,6 @@ public class TemperatureViewController implements ViewController
   @FXML private TextField t2Temp;
   @FXML private TextField radiatorField;
 
-
-
-
   @Override public void init(ViewHandler vh, ViewModelFactory vmf)
   {
     this.vh=vh;
@@ -48,14 +45,16 @@ public class TemperatureViewController implements ViewController
 
   public void t0DataButton(ActionEvent actionEvent)
   {
-    vh.openDataView(1);
+    vh.openDataView(0);
   }
 
   public void t1DataButton(ActionEvent actionEvent)
   {
+    vh.openDataView(1);
   }
 
   public void t2DataButton(ActionEvent actionEvent)
   {
+    vh.openDataView(2);
   }
 }

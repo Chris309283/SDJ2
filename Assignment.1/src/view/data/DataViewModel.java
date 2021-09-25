@@ -9,5 +9,9 @@ public class DataViewModel
   public DataViewModel(TemperatureHubModel model)
   {
     this.model = model;
+
+
   }
+
+
 }

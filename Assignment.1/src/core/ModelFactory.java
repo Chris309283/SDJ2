@@ -5,14 +5,14 @@ import mediator.TemperatureHubModelManager;
 
 public class ModelFactory
 {
-private TemperatureHubModel temperatureHubModel;
+  private TemperatureHubModel temperatureHubModel;
 
-public TemperatureHubModel getTemperatureHubModel()
-{
-  if (temperatureHubModel == null)
+  public TemperatureHubModel getTemperatureHubModel()
   {
-    temperatureHubModel = new TemperatureHubModelManager();
+    if (temperatureHubModel == null)
+    {
+      temperatureHubModel = new TemperatureHubModelManager();
+    }
+    return temperatureHubModel;
   }
-  return temperatureHubModel;
-}
 }
