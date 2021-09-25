@@ -1,4 +1,4 @@
-package viewmodel;
+package core;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -69,5 +69,9 @@ public class ViewHandler
       e.printStackTrace();
     }
     return root;
+  }
+
+  public void openData(int i) {
+
   }
 }

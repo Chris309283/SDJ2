@@ -1,7 +1,7 @@
 package view;
 
-import viewmodel.ViewHandler;
-import viewmodel.ViewModelFactory;
+import core.ViewHandler;
+import core.ViewModelFactory;
 
 public interface ViewController
 {

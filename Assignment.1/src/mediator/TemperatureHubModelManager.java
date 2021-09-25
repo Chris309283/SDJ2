@@ -27,8 +27,9 @@ public class TemperatureHubModelManager implements TemperatureHubModel
     this.tempList.addTemperatures(temperature);
     if (oldTemperature != null && oldTemperature != temperature)
     {
+      System.out.println("model" + id);
       changeSupport.firePropertyChange(temperature.getThermometerId(),
-          oldTemperature.getTemp(), temperature.getTemp());
+          oldTemperature, temperature);
     }
   }
 
@@ -39,7 +40,7 @@ public class TemperatureHubModelManager implements TemperatureHubModel
 
   @Override public void updateTempT0(double temp)
   {
-    changeSupport.firePropertyChange("t0Temp", null, temp);
+    changeSupport.firePropertyChange("t0Temp", null, new Temperature("t0Temp",temp));
   }
 
   @Override public void radiatorUp()

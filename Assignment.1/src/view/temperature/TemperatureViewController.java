@@ -4,8 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import view.ViewController;
-import viewmodel.ViewHandler;
-import viewmodel.ViewModelFactory;
+import core.ViewHandler;
+import core.ViewModelFactory;
 
 public class TemperatureViewController implements ViewController
 {
@@ -48,7 +48,7 @@ public class TemperatureViewController implements ViewController
 
   public void t0DataButton(ActionEvent actionEvent)
   {
-    vh.openDataView();
+    vh.openDataView(1);
   }
 
   public void t1DataButton(ActionEvent actionEvent)

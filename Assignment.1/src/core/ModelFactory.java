@@ -1,4 +1,4 @@
-package viewmodel;
+package core;
 
 import mediator.TemperatureHubModel;
 import mediator.TemperatureHubModelManager;

@@ -43,7 +43,7 @@ public class ExternalTemperature implements Runnable
       model.updateTempT0(t);
       try
       {
-        Thread.sleep(2000);
+        Thread.sleep(4000);
       }
       catch (InterruptedException e)
       {
