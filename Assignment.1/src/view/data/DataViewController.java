@@ -13,11 +13,6 @@ public class DataViewController implements ViewController
 
   public LineChart lineChart;
 
-  public void backButton(ActionEvent actionEvent)
-  {
-
-  }
-
   @Override public void init(ViewHandler vh, ViewModelFactory vmf)
   {
     this.vh = vh;
@@ -27,6 +22,11 @@ public class DataViewController implements ViewController
   }
 
   @Override public void reset()
+  {
+
+  }
+
+  public void backButton(ActionEvent actionEvent)
   {
 
   }

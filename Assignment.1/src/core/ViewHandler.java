@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class ViewHandler
 {
-  private Stage stage;
+  private Stage mainStage;
   private ViewModelFactory vmf;
 
   private ViewController currentlyActive;
@@ -18,60 +18,76 @@ public class ViewHandler
   public ViewHandler(ViewModelFactory vmf, Stage stage)
   {
     this.vmf = vmf;
-    this.stage = stage;
+    this.mainStage = stage;
   }
 
-  public void start() throws IOException
+  public void start()
   {
-    Scene scene;
-    Parent root;
-
-    FXMLLoader loader = new FXMLLoader();
-    loader.setLocation(getClass().getResource("../view/temperature/TemperatureView.fxml"));
-    root = loader.load();
-
-    ViewController ctrl = loader.getController();
-    currentlyActive = ctrl;
-    ctrl.init(this,vmf);
-
-    stage.setTitle("Temperature Controller");
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
+    openTemperatureView();
   }
 
-  public Parent openTemperatureView()
+  private Scene tempScene;
+  private Scene dataScene;
+
+  public void openTemperatureView()
   {
-    currentlyActive.reset();
-    return getRoot("../view/temperature/TemperatureView.fxml");
+    try
+    {
+      if (tempScene == null)
+      {
+        tempScene = getScene("../view/temperature/TemperatureView.fxml");
+        changeScene("Temperatures", tempScene);
+      }
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+    }
   }
 
-  public Parent openDataView()
+  public void openDataView(int i)
   {
-    currentlyActive.reset();
-    return getRoot("../view/data/DataView.fxml");
+    try
+    {
+      if (dataScene == null)
+      {
+        dataScene = getScene("../view/data/DataView.fxml");
+        changeScene("Data view", dataScene);
+      }
+    }
+    catch (Exception e)
+    {
+      e.printStackTrace();
+    }
   }
 
-  private Parent getRoot(String path)
+  private void changeScene(String s, Scene scene)
   {
-    Parent root = null;
+    mainStage.setTitle(s);
+    mainStage.setScene(scene);
+    mainStage.show();
+  }
+
+  private Scene getScene(String path)
+  {
     try
     {
       FXMLLoader loader = new FXMLLoader();
+
       loader.setLocation(getClass().getResource(path));
-      root = loader.load();
-      ViewController ctrl = loader.getController();
-      currentlyActive = ctrl;
-      ctrl.init(this,vmf);
+      Parent root = loader.load();
+
+      ViewController view = loader.getController();
+      view.init(this,vmf);
+
+      return new Scene(root);
     }
     catch (IOException e)
     {
       e.printStackTrace();
     }
-    return root;
+    throw new RuntimeException("Failed to create scene");
   }
 
-  public void openData(int i) {
 
-  }
 }
