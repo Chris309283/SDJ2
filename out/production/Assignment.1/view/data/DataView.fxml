@@ -15,12 +15,12 @@
          <children>
             <HBox prefHeight="291.0" prefWidth="604.0">
                <children>
-                  <LineChart fx:id="lineChart" prefHeight="313.0" prefWidth="614.0" title="Data Graph">
+                  <LineChart fx:id="lineChart" prefHeight="313.0" prefWidth="695.0" title="Data Graph">
                     <xAxis>
-                      <CategoryAxis label="Time" side="BOTTOM" fx:id="xAxis" />
+                      <CategoryAxis label="Time" side="BOTTOM" />
                     </xAxis>
                     <yAxis>
-                      <NumberAxis fx:id="yAxis" label="Temperature" side="LEFT" />
+                      <NumberAxis label="Temperature" side="LEFT" />
                     </yAxis>
                   </LineChart>
                </children>

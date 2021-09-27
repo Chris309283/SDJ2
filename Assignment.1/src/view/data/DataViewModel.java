@@ -33,10 +33,13 @@ public class DataViewModel
     Platform.runLater(() -> {
       if (evt.getPropertyName().equals("t0Temp"))
       {
-        tempSeries.getData().removeAll();
+        System.out.println(tempSeries.getData().size());
+        tempSeries.getData().clear();
+        System.out.println(tempSeries.getData().size());
         for (int i = 0; i < t0TempList.getSize(); i++)
         {
           tempSeries.getData().add(new XYChart.Data<>(t0TempList.get(i).getTime().toString(),t0TempList.get(i).getTemp()));
+
         }
       }
     });

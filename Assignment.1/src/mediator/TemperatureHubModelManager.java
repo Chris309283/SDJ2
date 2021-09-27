@@ -39,8 +39,6 @@ public class TemperatureHubModelManager implements TemperatureHubModel
 
     changeSupport.firePropertyChange(temperature.getThermometerId(),
         oldTemperature, temperature);
-
-
   }
 
   @Override public Temperature getLastInsertedTemperature(String id)
