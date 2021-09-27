@@ -26,14 +26,12 @@ public class Radiator
 
   public int getPower()
   {
-    System.out.println("Current Power: " + currentState.getPower());
     return currentState.getPower();
   }
 
   void setPowerState(RadiatorState state)
   {
-   currentState = state;
-    System.out.println("Power changed to: "+ state.getPower());
-    changeSupport.firePropertyChange("radiatorChange",null,getPower());
+    currentState = state;
+    changeSupport.firePropertyChange("radiatorChange", null, getPower());
   }
 }

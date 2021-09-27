@@ -5,9 +5,9 @@ import view.temperature.TemperatureViewModel;
 
 public class ViewModelFactory
 {
-private ModelFactory mf;
-private TemperatureViewModel temperatureViewModel;
-private DataViewModel dataViewModel;
+  private ModelFactory mf;
+  private TemperatureViewModel temperatureViewModel;
+  private DataViewModel dataViewModel;
 
   public ViewModelFactory(ModelFactory mf)
   {
@@ -16,16 +16,17 @@ private DataViewModel dataViewModel;
 
   public TemperatureViewModel getTemperatureViewModel()
   {
-    if (this.temperatureViewModel==null)
+    if (this.temperatureViewModel == null)
     {
-      this.temperatureViewModel = new TemperatureViewModel(mf.getTemperatureHubModel());
+      this.temperatureViewModel = new TemperatureViewModel(
+          mf.getTemperatureHubModel());
     }
-   return temperatureViewModel;
+    return temperatureViewModel;
   }
 
   public DataViewModel getDataViewModel()
   {
-    if (this.dataViewModel==null)
+    if (this.dataViewModel == null)
     {
       this.dataViewModel = new DataViewModel(mf.getTemperatureHubModel());
     }

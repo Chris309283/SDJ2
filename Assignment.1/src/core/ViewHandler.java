@@ -5,7 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import view.ViewController;
-import model.temperature.TemperatureList;
 
 import java.io.IOException;
 
@@ -36,7 +35,7 @@ public class ViewHandler
       {
         tempScene = getScene("../view/temperature/TemperatureView.fxml", -1);
       }
-        changeScene("Temperatures", tempScene);
+      changeScene("Temperatures", tempScene);
     }
     catch (Exception e)
     {
@@ -49,11 +48,8 @@ public class ViewHandler
 
     try
     {
-      //if (dataScene == null)
-      {
-        dataScene = getScene("../view/data/DataView.fxml", i);
-      }
-        changeScene("Data view", dataScene);
+      dataScene = getScene("../view/data/DataView.fxml", i);
+      changeScene("Data view", dataScene);
     }
     catch (Exception e)
     {
@@ -78,7 +74,7 @@ public class ViewHandler
       Parent root = loader.load();
 
       ViewController view = loader.getController();
-      view.init(this,vmf, i);
+      view.init(this, vmf, i);
 
       return new Scene(root);
     }

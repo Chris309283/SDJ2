@@ -7,11 +7,12 @@ import util.PropertyChangeSubject;
 public interface TemperatureHubModel extends PropertyChangeSubject
 {
   void addTemperature(String id, double temp);
-  Temperature getLastInsertedTemperature(String id);
   void updateTempT0(double temp);
+  double getOutsideTemp();
 
-
-   TemperatureList getTempList0();
+  TemperatureList getTempList0();
+  TemperatureList getTempList1();
+  TemperatureList getTempList2();
 
   void radiatorUp();
   void radiatorDown();

@@ -1,12 +1,8 @@
 package view.data;
 
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-
 import javafx.scene.chart.LineChart;
-
-import javafx.scene.chart.XYChart;
 import view.ViewController;
 import core.ViewHandler;
 import core.ViewModelFactory;
@@ -23,23 +19,22 @@ public class DataViewController implements ViewController
     this.vh = vh;
     this.dataViewModel = vmf.getDataViewModel();
 
-/*    XYChart.Series series = new XYChart.Series();
-    series.setData(dataViewModel.getTempSeries());*/
-/*
-    if (i==0)
+    if (i == 0)
     {
-      for (int j = 0; j < dataViewModel.getT0TempList().getSize(); j++)
-      {
-        series.getData().add(new XYChart.Data(dataViewModel.getT0TempList().get(j).getTime().toString(),dataViewModel.getT0TempList().get(j).getTemp()));
-      }
+      lineChart.getData().setAll(dataViewModel.getT0TempSeries());
     }
-    lineChart.getData().add(series);*/
-
-    lineChart.getData().setAll(dataViewModel.getTempSeries());
+    if (i == 1)
+    {
+      lineChart.getData().setAll(dataViewModel.getT1TempSeries());
+    }
+    if (i == 2)
+    {
+      lineChart.getData().setAll(dataViewModel.getT2TempSeries());
+    }
   }
 
   public void backButton(ActionEvent actionEvent)
   {
-   vh.openTemperatureView();
+    vh.openTemperatureView();
   }
 }

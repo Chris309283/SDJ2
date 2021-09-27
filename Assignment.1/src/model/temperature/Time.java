@@ -21,54 +21,6 @@ public class Time implements Serializable
   }
 
   /**
-   * Three-argument constructor initializing the model.Time.
-   *
-   * @param h the hour of the day.
-   * @param m the minute of the hour.
-   * @param s the second of the minute.
-   */
-  public Time(int h, int m, int s)
-  {
-    this.hour = h;
-    this.minute = m;
-    this.second = s;
-  }
-
-  /**
-   * One-argument constructor initializing the model.Time.
-   *
-   * @param totalTimeInSeconds sets the time of the day from total seconds.
-   */
-  public Time(int totalTimeInSeconds)
-  {
-    hour = totalTimeInSeconds / 3600;
-    totalTimeInSeconds = totalTimeInSeconds - hour * 3600;
-    minute = totalTimeInSeconds / 60;
-    totalTimeInSeconds = totalTimeInSeconds - minute * 60;
-    second = totalTimeInSeconds;
-  }
-
-  /**
-   * Gets the hour of the day
-   *
-   * @return the hour of the day
-   */
-  public int getHour()
-  {
-    return hour;
-  }
-
-  /**
-   * Gets the minute of the hour
-   *
-   * @return the minute of the hour
-   */
-  public int getMinute()
-  {
-    return minute;
-  }
-
-  /**
    * Compares the hour, minute and second of two times
    *
    * @param obj The object to compare this time against.

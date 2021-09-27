@@ -13,6 +13,7 @@ public class TemperatureHubModelManager implements TemperatureHubModel
   private TemperatureList tempList1;
   private TemperatureList tempList2;
   private Radiator radiator;
+  private double tempOutside;
 
   private PropertyChangeSupport changeSupport = new PropertyChangeSupport(this);
 
@@ -27,7 +28,6 @@ public class TemperatureHubModelManager implements TemperatureHubModel
   @Override public void addTemperature(String id, double temp)
   {
     Temperature temperature = new Temperature(id, temp);
-    Temperature oldTemperature = getLastInsertedTemperature(id);
     if (id.equals("t1Temp"))
     {
       this.tempList1.addTemperature(temperature);
@@ -36,33 +36,22 @@ public class TemperatureHubModelManager implements TemperatureHubModel
     {
       this.tempList2.addTemperature(temperature);
     }
-
-    changeSupport.firePropertyChange(temperature.getThermometerId(),
-        oldTemperature, temperature);
-  }
-
-  @Override public Temperature getLastInsertedTemperature(String id)
-  {
-    if (id.equals("t0Temp"))
-    {
-      return tempList0.getLastTemp();
-    }
-    if (id.equals("t1Temp"))
-    {
-      return tempList1.getLastTemp();
-    }
-
-    return tempList2.getLastTemp();
-
+    changeSupport.firePropertyChange(temperature.getThermometerId(), null,
+        temperature);
   }
 
   @Override public void updateTempT0(double temp)
   {
+    tempOutside = temp;
     changeSupport.firePropertyChange("t0Temp", null,
         new Temperature("t0Temp", temp));
     this.tempList0.addTemperature(new Temperature("t0Temp", temp));
   }
 
+  @Override public double getOutsideTemp()
+  {
+    return tempOutside;
+  }
 
   @Override public void radiatorUp()
   {
@@ -120,7 +109,6 @@ public class TemperatureHubModelManager implements TemperatureHubModel
   public TemperatureList getTempList0()
   {
     return tempList0;
-
   }
 
   public TemperatureList getTempList1()

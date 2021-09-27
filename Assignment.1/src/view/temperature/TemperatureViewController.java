@@ -19,13 +19,17 @@ public class TemperatureViewController implements ViewController
 
   @Override public void init(ViewHandler vh, ViewModelFactory vmf, int i)
   {
-    this.vh=vh;
+    this.vh = vh;
     this.temperatureViewModel = vmf.getTemperatureViewModel();
 
-    radiatorField.textProperty().bind(temperatureViewModel.radiatorProperty().asString());
-    t0Temp.textProperty().bind(temperatureViewModel.t0TempProperty().asString());
-    t1Temp.textProperty().bind(temperatureViewModel.t1TempProperty().asString());
-    t2Temp.textProperty().bind(temperatureViewModel.t2TempProperty().asString());
+    radiatorField.textProperty()
+        .bind(temperatureViewModel.radiatorProperty().asString());
+    t0Temp.textProperty()
+        .bind(temperatureViewModel.t0TempProperty().asString());
+    t1Temp.textProperty()
+        .bind(temperatureViewModel.t1TempProperty().asString());
+    t2Temp.textProperty()
+        .bind(temperatureViewModel.t2TempProperty().asString());
   }
 
   public void radButtonUp(ActionEvent actionEvent)

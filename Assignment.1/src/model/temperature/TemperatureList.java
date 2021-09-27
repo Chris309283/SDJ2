@@ -1,7 +1,6 @@
 package model.temperature;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class TemperatureList
 {
@@ -14,7 +13,7 @@ public class TemperatureList
 
   public void addTemperature(Temperature temp)
   {
-    if (temperatures.size()>=20)
+    if (temperatures.size() >= 20)
     {
       temperatures.remove(0);
     }
@@ -23,13 +22,13 @@ public class TemperatureList
 
   public Temperature getLastTemp()
   {
-    if (temperatures.size()<1)
+    if (temperatures.size() < 1)
     {
       return null;
     }
     else
     {
-      return temperatures.get(temperatures.size()-1);
+      return temperatures.get(temperatures.size() - 1);
     }
   }
 
@@ -41,11 +40,5 @@ public class TemperatureList
   public Temperature get(int index)
   {
     return temperatures.get(index);
-  }
-
-  public List<Temperature> getList()
-  {
-    List<Temperature> list = new ArrayList<Temperature>(temperatures);
-    return list;
   }
 }

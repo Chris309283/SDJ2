@@ -17,7 +17,6 @@ public class TemperatureViewModel
   private DoubleProperty t0Temp;
   private DoubleProperty t1Temp;
   private DoubleProperty t2Temp;
-  private DoubleProperty temp;
 
   private IntegerProperty radiator;
 
@@ -27,7 +26,6 @@ public class TemperatureViewModel
     this.t0Temp = new SimpleDoubleProperty();
     this.t1Temp = new SimpleDoubleProperty();
     this.t2Temp = new SimpleDoubleProperty();
-    this.temp = new SimpleDoubleProperty();
 
     this.radiator = new SimpleIntegerProperty();
     model.addPropertyChangeListener(this::updateValues);
@@ -84,11 +82,6 @@ public class TemperatureViewModel
   public DoubleProperty t2TempProperty()
   {
     return t2Temp;
-  }
-
-  public DoubleProperty tempProperty()
-  {
-    return temp;
   }
 
   public IntegerProperty radiatorProperty()
