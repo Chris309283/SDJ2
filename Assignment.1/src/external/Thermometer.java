@@ -67,11 +67,11 @@ public class Thermometer implements Runnable
   {
     while (true)
     {
-      t = temperature(t, model.getRadiatorPower(), d, 0, 7);
+      t = temperature(t, model.getRadiatorPower(), d, model.getOutsideTemp(), 7);
       model.addTemperature(id, t);
       try
       {
-        Thread.sleep(10000);
+        Thread.sleep(7000);
       }
       catch (InterruptedException e)
       {

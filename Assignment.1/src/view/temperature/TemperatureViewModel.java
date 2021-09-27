@@ -18,6 +18,7 @@ public class TemperatureViewModel
   private DoubleProperty t1Temp;
   private DoubleProperty t2Temp;
 
+
   private IntegerProperty radiator;
 
   public TemperatureViewModel(TemperatureHubModel model)

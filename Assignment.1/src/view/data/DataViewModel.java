@@ -1,6 +1,8 @@
 package view.data;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import mediator.TemperatureHubModel;
 import model.temperature.TemperatureList;
@@ -9,21 +11,46 @@ import java.beans.PropertyChangeEvent;
 
 public class DataViewModel
 {
+  private ObservableList<XYChart.Data<String, Number>> list0, list1, list2;
+
   private TemperatureHubModel model;
-  private XYChart.Series t0TempSeries = new XYChart.Series();
-  private XYChart.Series t1TempSeries = new XYChart.Series();
-  private XYChart.Series t2TempSeries = new XYChart.Series();
 
   private TemperatureList t0TempList, t1TempList, t2TempList;
 
   public DataViewModel(TemperatureHubModel model)
   {
-    t0TempList = model.getTempList0();
-    t1TempList = model.getTempList1();
-    t2TempList = model.getTempList2();
+
+    this.list0 = FXCollections.observableArrayList();
+    this.list1 = FXCollections.observableArrayList();
+    this.list2 = FXCollections.observableArrayList();
+
+    this.t0TempList = model.getTempList0();
+    this.t1TempList = model.getTempList1();
+    this.t2TempList = model.getTempList2();
 
     this.model = model;
     model.addPropertyChangeListener(this::updateTempLists);
+  }
+
+  public void StartTempLists()
+  {
+    for (int i = 0; i < t0TempList.getSize(); i++)
+    {
+      list0.add(new XYChart.Data<>(t0TempList.get(i).getTime(),
+          t0TempList.get(i).getTemp()));
+    }
+
+    for (int i = 0; i < t1TempList.getSize(); i++)
+    {
+      list1.add(new XYChart.Data<>(t1TempList.get(i).getTime(),
+          t1TempList.get(i).getTemp()));
+    }
+
+    for (int i = 0; i < t2TempList.getSize(); i++)
+    {
+      list2.add(new XYChart.Data<>(t2TempList.get(i).getTime(),
+          t2TempList.get(i).getTemp()));
+    }
   }
 
   public void updateTempLists(PropertyChangeEvent evt)
@@ -31,49 +58,46 @@ public class DataViewModel
     Platform.runLater(() -> {
       if (evt.getPropertyName().equals("t0Temp"))
       {
-        t0TempSeries.getData().clear();
+        list0.clear();
         for (int i = 0; i < t0TempList.getSize(); i++)
         {
-          t0TempSeries.getData().add(
-              new XYChart.Data<>(t0TempList.get(i).getTime().toString(),
-                  t0TempList.get(i).getTemp()));
+          list0.add(new XYChart.Data<>(t0TempList.get(i).getTime(),
+              t0TempList.get(i).getTemp()));
         }
       }
       if (evt.getPropertyName().equals("t1Temp"))
       {
-        t1TempSeries.getData().clear();
+        list1.clear();
         for (int i = 0; i < t1TempList.getSize(); i++)
         {
-          t1TempSeries.getData().add(
-              new XYChart.Data<>(t1TempList.get(i).getTime().toString(),
-                  t1TempList.get(i).getTemp()));
+          list1.add(new XYChart.Data<>(t1TempList.get(i).getTime(),
+              t1TempList.get(i).getTemp()));
         }
       }
       if (evt.getPropertyName().equals("t2Temp"))
       {
-        t2TempSeries.getData().clear();
+        list2.clear();
         for (int i = 0; i < t2TempList.getSize(); i++)
         {
-          t2TempSeries.getData().add(
-              new XYChart.Data<>(t2TempList.get(i).getTime().toString(),
-                  t2TempList.get(i).getTemp()));
+          list2.add(new XYChart.Data<>(t2TempList.get(i).getTime(),
+              t2TempList.get(i).getTemp()));
         }
       }
     });
   }
 
-  public XYChart.Series getT0TempSeries()
+  public ObservableList<XYChart.Data<String, Number>> getList1()
   {
-    return t0TempSeries;
+    return list1;
   }
 
-  public XYChart.Series getT1TempSeries()
+  public ObservableList<XYChart.Data<String, Number>> getList0()
   {
-    return t1TempSeries;
+    return list0;
   }
 
-  public XYChart.Series getT2TempSeries()
+  public ObservableList<XYChart.Data<String, Number>> getList2()
   {
-    return t2TempSeries;
+    return list2;
   }
 }
