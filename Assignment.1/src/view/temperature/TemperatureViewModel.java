@@ -42,8 +42,6 @@ public class TemperatureViewModel
 
   private void updateTemps(PropertyChangeEvent evt)
   {
-    System.out.println("vm " + evt.getPropertyName());
-
     Platform.runLater(() -> {
       Temperature t = (Temperature) evt.getNewValue();
       if (evt.getPropertyName().equals("t0Temp"))

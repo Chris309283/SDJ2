@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import view.ViewController;
+import model.temperature.TemperatureList;
 
 import java.io.IOException;
 
@@ -12,8 +13,6 @@ public class ViewHandler
 {
   private Stage mainStage;
   private ViewModelFactory vmf;
-
-  private ViewController currentlyActive;
 
   public ViewHandler(ViewModelFactory vmf, Stage stage)
   {
@@ -35,9 +34,9 @@ public class ViewHandler
     {
       if (tempScene == null)
       {
-        tempScene = getScene("../view/temperature/TemperatureView.fxml");
-        changeScene("Temperatures", tempScene);
+        tempScene = getScene("../view/temperature/TemperatureView.fxml", -1);
       }
+        changeScene("Temperatures", tempScene);
     }
     catch (Exception e)
     {
@@ -47,13 +46,14 @@ public class ViewHandler
 
   public void openDataView(int i)
   {
+
     try
     {
-      if (dataScene == null)
+      //if (dataScene == null)
       {
-        dataScene = getScene("../view/data/DataView.fxml");
-        changeScene("Data view", dataScene);
+        dataScene = getScene("../view/data/DataView.fxml", i);
       }
+        changeScene("Data view", dataScene);
     }
     catch (Exception e)
     {
@@ -68,7 +68,7 @@ public class ViewHandler
     mainStage.show();
   }
 
-  private Scene getScene(String path)
+  private Scene getScene(String path, int i)
   {
     try
     {
@@ -78,7 +78,7 @@ public class ViewHandler
       Parent root = loader.load();
 
       ViewController view = loader.getController();
-      view.init(this,vmf);
+      view.init(this,vmf, i);
 
       return new Scene(root);
     }
@@ -88,6 +88,4 @@ public class ViewHandler
     }
     throw new RuntimeException("Failed to create scene");
   }
-
-
 }
