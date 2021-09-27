@@ -13,9 +13,9 @@ public class Temperature
     this.time = new Time();
   }
 
-  public Time getTime()
+  public String getTime()
   {
-    return time;
+    return time.toString();
   }
 
   public String getThermometerId()

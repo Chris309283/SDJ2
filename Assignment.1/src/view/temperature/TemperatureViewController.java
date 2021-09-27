@@ -17,7 +17,7 @@ public class TemperatureViewController implements ViewController
   @FXML private TextField t2Temp;
   @FXML private TextField radiatorField;
 
-  @Override public void init(ViewHandler vh, ViewModelFactory vmf)
+  @Override public void init(ViewHandler vh, ViewModelFactory vmf, int i)
   {
     this.vh=vh;
     this.temperatureViewModel = vmf.getTemperatureViewModel();
@@ -26,11 +26,6 @@ public class TemperatureViewController implements ViewController
     t0Temp.textProperty().bind(temperatureViewModel.t0TempProperty().asString());
     t1Temp.textProperty().bind(temperatureViewModel.t1TempProperty().asString());
     t2Temp.textProperty().bind(temperatureViewModel.t2TempProperty().asString());
-  }
-
-  @Override public void reset()
-  {
-
   }
 
   public void radButtonUp(ActionEvent actionEvent)

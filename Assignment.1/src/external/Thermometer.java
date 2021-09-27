@@ -86,7 +86,6 @@ public class Thermometer implements Runnable
     while (true)
     {
       t = temperature(t,model.getRadiatorPower(),d,0,4);
-      System.out.println(id + " temperature is: " + t );
       model.addTemperature(id,t);
       try
       {
