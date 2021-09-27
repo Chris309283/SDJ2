@@ -45,7 +45,6 @@ public class ViewHandler
 
   public void openDataView(int i)
   {
-
     try
     {
       dataScene = getScene("../view/data/DataView.fxml", i);
