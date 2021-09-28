@@ -21,7 +21,6 @@ public class TemperatureViewController implements ViewController
   {
     this.vh = vh;
     this.temperatureViewModel = vmf.getTemperatureViewModel();
-
     radiatorField.textProperty()
         .bind(temperatureViewModel.radiatorProperty().asString());
     t0Temp.textProperty()
