@@ -22,21 +22,26 @@ public class Client
 
     System.out.println("Connect to server?");
     String connectRequest = input.nextLine();
-    System.out.println("Client> " + connectRequest);
-
     outWriter.println(connectRequest);
 
     String reply = in.readLine();
     System.out.println("Server> " + reply);
-    String usernameRequest = input.nextLine();
-    outWriter.println(usernameRequest);
+    if (reply.equals("Disconnected"))
+    {
+      clientSocket.close();
+    }
+    else
+    {
+      String usernameRequest = input.nextLine();
+      outWriter.println(usernameRequest);
 
-    String reply2 = in.readLine();
-    System.out.println("Server> " + reply2);
-    String passwordRequest = input.nextLine();
-    outWriter.println(passwordRequest);
+      String reply2 = in.readLine();
+      System.out.println("Server> " + reply2);
+      String passwordRequest = input.nextLine();
+      outWriter.println(passwordRequest);
 
-    String reply3 = in.readLine();
-    System.out.println("Server> " + reply3);
+      String reply3 = in.readLine();
+      System.out.println("Server> " + reply3);
+    }
   }
 }
