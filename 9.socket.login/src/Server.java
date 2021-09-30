@@ -30,29 +30,31 @@ public class Server
       if (!connectRequest.equals("connect"))
       {
         System.out.println("Client "+ clientIP +" reply: " + connectRequest + " does not match protocol");
+        System.out.println("Client has been Disconnected");
         outWriter.println("Disconnected");
-        serverSocket.close();
       }
+      else
+      {
+        System.out.println("Client " + clientIP + "> " + connectRequest);
 
-      System.out.println("Client " + clientIP + "> " + connectRequest);
+        String username = "Username?";
+        System.out.println("Server> " + username);
+        outWriter.println(username);
 
-      String username = "Username?";
-      System.out.println("Server> " + username);
-      outWriter.println(username);
+        String usernameRequest = in.readLine();
+        System.out.println("Client " + clientIP + "> " + usernameRequest);
 
-      String usernameRequest = in.readLine();
-      System.out.println("Client " + clientIP + "> " + usernameRequest);
+        String password = "Password?";
+        System.out.println("Server> " + password);
+        outWriter.println(password);
 
-      String password = "Password?";
-      System.out.println("Server> " + password);
-      outWriter.println(password);
+        String passwordRequest = in.readLine();
+        System.out.println("Client " + clientIP + "> " + passwordRequest);
 
-      String passwordRequest = in.readLine();
-      System.out.println("Client " + clientIP + "> " + passwordRequest);
-
-      String approved = "Approved";
-      System.out.println("Server> " + approved);
-      outWriter.println(approved);
+        String approved = "Approved";
+        System.out.println("Server> " + approved);
+        outWriter.println(approved);
+      }
     }
   }
 }

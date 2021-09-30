@@ -31,9 +31,9 @@ public class TCPServer
       String reply = request.toUpperCase();
 
       //send lind to client
-
       System.out.println("Server> " + reply);
       outWriter.println(reply);
+
       // loop back and wait for another client
     }
   }
