@@ -7,7 +7,7 @@ public class TCPServer
   public static void main(String[] args) throws IOException
   {
     final int PORT = 6789;
-    System.out.println("Starting Server ...");
+    System.out.println("Starting Server...");
 
     // creating server-socket at port 6789 listening for clients
     ServerSocket listenSocket = new ServerSocket(PORT);
