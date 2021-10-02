@@ -15,7 +15,7 @@ public class TaskListServer
     this.welcomeSocket = new ServerSocket(port);
   }
 
-  private void execute() throws IOException
+  public void execute() throws IOException
   {
     System.out.println("Starting Server... ");
     while (true)
