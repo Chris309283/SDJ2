@@ -28,36 +28,49 @@ public class TaskListCommunicationThreadHandler implements Runnable
       try
       {
         int toDo = in.readInt();
-        switch (toDo)
+        System.out.println("Client " + ip + "> " + toDo);
+        if (toDo == 1 || toDo == 2 || toDo == 3)
         {
-          case 1:
+          switch (toDo)
+          {
+            case 1:
 
-            String task = in.readUTF();
-            int taskTime = in.readInt();
-            tasks.add(new Task(task,taskTime));
-            out.writeUTF("Server> Task has been added");
-            break;
+              String task = in.readUTF();
+              System.out.println("Client " + ip + "> " + task);
+              int taskTime = in.readInt();
+              System.out.println("Client " + ip + "> " + taskTime);
+              tasks.add(new Task(task, taskTime));
+              out.writeUTF("Server> Task has been added");
+              break;
 
-          case 2:
-            if (tasks.size()==0)
-            {
-              out.writeUTF("ERROR");
-            }
-            else
-            {
-              String taskReturn = tasks.getAndRemoveNextTask().getText();
-              long taskEstimate = tasks.getAndRemoveNextTask().getEstimatedTime();
-              out.writeUTF("Server> " + taskReturn + ": " + taskEstimate);
-            }
-            break;
+            case 2:
+              if (tasks.size() == 0)
+              {
+                out.writeUTF("ERROR");
+                System.out.println("Server> ERROR");
+              }
+              else
+              {
+                Task task1 = tasks.getAndRemoveNextTask();
+                out.writeUTF(task1.getText());
+                out.writeLong(task1.getEstimatedTime());
+                System.out.println("Server> " + task1.getText() + ": "
+                    + task1.getEstimatedTime());
+              }
+              break;
 
-          case 3:
-            int taskSize = tasks.size();
-            out.writeUTF("Server> " + taskSize);
-            break;
-
-          default:
-            out.writeUTF("Server> EXIT");
+            case 3:
+              out.writeInt(tasks.size());
+              System.out.println("Server> " + tasks.size());
+              break;
+          }
+        }
+        else
+        {
+          out.writeUTF("EXIT");
+          System.out.println("Server> EXIT");
+          System.out.println("Client " + ip + " has been disconnected");
+          break;
         }
       }
       catch (IOException e)

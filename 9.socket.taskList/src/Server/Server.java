@@ -8,6 +8,5 @@ public class Server
   {
     TaskList taskList = new TaskList();
     TaskListServer taskListServer = new TaskListServer(taskList,6798);
-    taskListServer.execute();
   }
 }

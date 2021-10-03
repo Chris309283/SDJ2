@@ -13,18 +13,22 @@ public class TaskListServer
   {
     this.taskList = taskList;
     this.welcomeSocket = new ServerSocket(port);
+    execute();
   }
 
-  public void execute() throws IOException
+  private void execute() throws IOException
   {
     System.out.println("Starting Server... ");
+    int count = 1;
     while (true)
     {
       System.out.println("Waiting for clients...");
       Socket socket = welcomeSocket.accept();
-      Runnable TLCTH = new TaskListCommunicationThreadHandler(socket,taskList);
-      Thread t1 = new Thread(TLCTH);
-      t1.start();
+      Runnable tlcth = new TaskListCommunicationThreadHandler(socket,taskList);
+      Thread t = new Thread(tlcth);
+      t.start();
+      System.out.println("Client number: " + count + " connected");
+      count++;
     }
   }
 }
