@@ -1,4 +1,4 @@
-package Server;
+package server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -28,7 +28,7 @@ public class TaskListCommunicationThreadHandler implements Runnable
       try
       {
         int toDo = in.readInt();
-        System.out.println("Client " + ip + "> " + toDo);
+        System.out.println("client " + ip + "> " + toDo);
         if (toDo == 1 || toDo == 2 || toDo == 3)
         {
           switch (toDo)
@@ -36,9 +36,9 @@ public class TaskListCommunicationThreadHandler implements Runnable
             case 1:
 
               String task = in.readUTF();
-              System.out.println("Client " + ip + "> " + task);
+              System.out.println("client " + ip + "> " + task);
               int taskTime = in.readInt();
-              System.out.println("Client " + ip + "> " + taskTime);
+              System.out.println("client " + ip + "> " + taskTime);
               tasks.add(new Task(task, taskTime));
               out.writeUTF("Server> Task has been added");
               break;
@@ -69,7 +69,7 @@ public class TaskListCommunicationThreadHandler implements Runnable
         {
           out.writeUTF("EXIT");
           System.out.println("Server> EXIT");
-          System.out.println("Client " + ip + " has been disconnected");
+          System.out.println("client " + ip + " has been disconnected");
           break;
         }
       }

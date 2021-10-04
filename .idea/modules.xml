@@ -8,8 +8,10 @@
       <module fileurl="file://$PROJECT_DIR$/1.threads.temperatureConverter/1.threads.temperatureConverter.iml" filepath="$PROJECT_DIR$/1.threads.temperatureConverter/1.threads.temperatureConverter.iml" />
       <module fileurl="file://$PROJECT_DIR$/1.threads.thread/1.threads.thread.iml" filepath="$PROJECT_DIR$/1.threads.thread/1.threads.thread.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.socket. multiThreadSocket/10.socket. multiThreadSocket.iml" filepath="$PROJECT_DIR$/10.socket. multiThreadSocket/10.socket. multiThreadSocket.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10.socket.json.login/10.socket.json.login.iml" filepath="$PROJECT_DIR$/10.socket.json.login/10.socket.json.login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10.socket.json.message/10.socket.json.message.iml" filepath="$PROJECT_DIR$/10.socket.json.message/10.socket.json.message.iml" />
       <module fileurl="file://$PROJECT_DIR$/10.socket.json.student/10.socket.json.student.iml" filepath="$PROJECT_DIR$/10.socket.json.student/10.socket.json.student.iml" />
-      <module fileurl="file://$PROJECT_DIR$/10.socket.login/10.socket.login.iml" filepath="$PROJECT_DIR$/10.socket.login/10.socket.login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/10.socket.json.taskList/10.socket.json.taskList.iml" filepath="$PROJECT_DIR$/10.socket.json.taskList/10.socket.json.taskList.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization1/2.threads2.synchronization1.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization1/2.threads2.synchronization1.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" />

@@ -1,4 +1,4 @@
-package Client;
+package client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -47,6 +47,7 @@ public class TaskListClient
             out.writeInt(taskTime);
             System.out.println(in.readUTF());
             break;
+
           case 2:
             String reply = in.readUTF();
             if (reply.equals("ERROR"))
@@ -59,6 +60,7 @@ public class TaskListClient
               System.out.println("server> " + reply + ": " + tTime);
             }
             break;
+
           case 3:
             System.out.println("Server> " + in.readInt());
             break;
