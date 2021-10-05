@@ -34,8 +34,7 @@ public class TaskListClient
 
       int choice = input.nextInt();
       out.writeInt(choice);
-      // if (choice == 1 || choice == 2 || choice == 3)
-      //      {
+
       switch (choice)
       {
         case 1:
@@ -51,13 +50,6 @@ public class TaskListClient
           run = false;
           break;
       }
-      //      }
-      //      else
-      //      {
-      //        System.out.println("Server> " + in.readUTF());
-      //        socket.close();
-      //        break;
-      //      }
     }
     socket.close();
   }
