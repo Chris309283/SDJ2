@@ -32,9 +32,18 @@ public class UserClient implements Model
   @Override public void login(String userName, String password)
       throws IllegalStateException, IllegalArgumentException
   {
-    User user = new User(userName,password);
-    String json = gson.toJson(user);
-    out.println(json);
-    String reply = in.readLine();
+
+    try
+    {
+      User user = new User(userName,password);
+      String json = gson.toJson(user);
+      out.println(json);
+      String reply = in.readLine();
+      System.out.println(reply);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
   }
 }

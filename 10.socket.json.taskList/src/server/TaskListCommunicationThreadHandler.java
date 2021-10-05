@@ -80,11 +80,11 @@ public class TaskListCommunicationThreadHandler implements Runnable
     }
     else
     {
-      Task task1 = tasks.getAndRemoveNextTask();
-      String jsonTask = gson.toJson(task1);
+      Task task = tasks.getAndRemoveNextTask();
+      String jsonTask = gson.toJson(task);
       out.writeUTF(jsonTask);
       System.out.println(
-          "Server> " + task1.getText() + ": " + task1.getEstimatedTime());
+          "Server> " + task.getText() + ": " + task.getEstimatedTime());
     }
   }
 

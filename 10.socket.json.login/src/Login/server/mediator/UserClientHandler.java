@@ -23,10 +23,11 @@ public class UserClientHandler implements Runnable
   {
     this.socket = socket;
     this.model = model;
-    this.in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-    this.out = new PrintWriter(socket.getOutputStream(),true);
+    this.in = new BufferedReader(
+        new InputStreamReader(socket.getInputStream()));
+    this.out = new PrintWriter(socket.getOutputStream(), true);
     this.gson = new Gson();
-    this.clientIp= socket.getInetAddress().getHostAddress();
+    this.clientIp = socket.getInetAddress().getHostAddress();
   }
 
   public void close()
@@ -39,15 +40,18 @@ public class UserClientHandler implements Runnable
     try
     {
       String clientText = in.readLine();
-      UserPackage userPackage = gson.fromJson(clientText,UserPackage.class);
+      UserPackage userPackage = gson.fromJson(clientText, UserPackage.class);
       model.addUser(userPackage.getUser(), userPackage.getPassword());
       out.println("Success: you are now logged in");
     }
     catch (IOException e)
     {
       e.printStackTrace();
-    } catch(Exception e){
+    }
+    catch (Exception e)
+    {
       e.printStackTrace();
+      e.getMessage();
     }
   }
 }
