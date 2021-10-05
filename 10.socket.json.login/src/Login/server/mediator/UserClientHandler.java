@@ -40,11 +40,13 @@ public class UserClientHandler implements Runnable
     {
       String clientText = in.readLine();
       UserPackage userPackage = gson.fromJson(clientText,UserPackage.class);
-      model.addUser("Chris","1234");
+      model.addUser(userPackage.getUser(), userPackage.getPassword());
       out.println("Success: you are now logged in");
     }
     catch (IOException e)
     {
+      e.printStackTrace();
+    } catch(Exception e){
       e.printStackTrace();
     }
   }

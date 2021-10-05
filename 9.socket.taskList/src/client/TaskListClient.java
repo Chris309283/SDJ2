@@ -24,7 +24,8 @@ public class TaskListClient
 
   private void execute() throws IOException
   {
-    while (true)
+    boolean run = true;
+    while (run)
     {
       System.out.println("1) Add a task");
       System.out.println("2) Get a task");
@@ -33,43 +34,57 @@ public class TaskListClient
 
       int choice = input.nextInt();
       out.writeInt(choice);
-      if (choice == 1 || choice == 2 || choice == 3)
+      // if (choice == 1 || choice == 2 || choice == 3)
+      //      {
+      switch (choice)
       {
-        switch (choice)
-        {
-          case 1:
-            System.out.println("Enter the task: ");
-            input.nextLine();
-            String task = input.nextLine();
-            System.out.println("Enter the estimated time: ");
-            int taskTime = input.nextInt();
-            out.writeUTF(task);
-            out.writeInt(taskTime);
-            System.out.println(in.readUTF());
-            break;
-          case 2:
-            String reply = in.readUTF();
-            if (reply.equals("ERROR"))
-            {
-              System.out.println("server> " + reply);
-            }
-            else
-            {
-              long tTime = in.readLong();
-              System.out.println("server> " + reply + ": " + tTime);
-            }
-            break;
-          case 3:
-            System.out.println("Server> " + in.readInt());
-            break;
-        }
+        case 1:
+          addTask();
+          break;
+        case 2:
+          getTask();
+          break;
+        case 3:
+          System.out.println("Server> " + in.readInt());
+          break;
+        default:
+          run = false;
+          break;
       }
-      else
-      {
-        System.out.println("Server> " + in.readUTF());
-        socket.close();
-        break;
-      }
+      //      }
+      //      else
+      //      {
+      //        System.out.println("Server> " + in.readUTF());
+      //        socket.close();
+      //        break;
+      //      }
     }
+    socket.close();
+  }
+
+  private void getTask() throws IOException
+  {
+    String reply = in.readUTF();
+    if (reply.equals("ERROR"))
+    {
+      System.out.println("server> " + reply);
+    }
+    else
+    {
+      long tTime = in.readLong();
+      System.out.println("server> " + reply + ": " + tTime);
+    }
+  }
+
+  private void addTask() throws IOException
+  {
+    System.out.println("Enter the task: ");
+    input.nextLine();
+    String task = input.nextLine();
+    System.out.println("Enter the estimated time: ");
+    int taskTime = input.nextInt();
+    out.writeUTF(task);
+    out.writeInt(taskTime);
+    System.out.println(in.readUTF());
   }
 }
