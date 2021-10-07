@@ -5,24 +5,35 @@ import javafx.beans.property.StringProperty;
 import socketsuppercase.client.model.TextConverter;
 
 public class UppercaseViewModel {
-    private StringProperty request, reply, error;
-    private TextConverter textConverter;
+    private StringProperty request;
+    private StringProperty reply;
+    private StringProperty error;
 
-    public UppercaseViewModel(TextConverter textConverter) {
-        this.textConverter = textConverter;
+    private TextConverter model;
+
+    public UppercaseViewModel(TextConverter model) {
+        this.model = model;
         request = new SimpleStringProperty();
         reply = new SimpleStringProperty();
         error = new SimpleStringProperty();
     }
 
-    void convert() {
-        String input = request.get();
-        if(input != null && !"".equals(input)) {
-            String result = textConverter.toUppercase(input);
-            reply.set(result);
+
+    void convertToUpperCase() {
+        String value = request.getValue();
+        if (request == null || value.equals("")) {
+            error.setValue("Empty input!");
         } else {
-            error.set("Input cannot be empty");
+            String result = model.toUpperCase(value);
+            reply.setValue(result);
+            error.setValue("");
         }
+    }
+
+    void clear() {
+        request.set("");
+        reply.set("");
+        error.set("");
     }
 
     StringProperty requestProperty() {

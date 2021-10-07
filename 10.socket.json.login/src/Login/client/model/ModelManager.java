@@ -6,17 +6,21 @@ import java.io.IOException;
 
 public class ModelManager implements Model
 {
-
-  private final UserClient userClient;
-
-  public ModelManager() throws IOException
+  public ModelManager()
   {
-    this.userClient = new UserClient();
   }
 
   @Override public void login(String userName, String password)
       throws IllegalStateException, IllegalArgumentException
   {
-    userClient.login(userName,password);
+    try
+    {
+      UserClient userClient = new UserClient("localhost",2910);
+      userClient.login(userName,password);
+    }
+      catch (IOException e)
+      {
+        e.printStackTrace();
+      }
   }
 }

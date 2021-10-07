@@ -2,7 +2,6 @@ package Login.server.mediator;
 
 import Login.server.model.Model;
 import com.google.gson.Gson;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -40,18 +39,15 @@ public class UserClientHandler implements Runnable
     try
     {
       String clientText = in.readLine();
+      System.out.println("Server> " + clientText);
       UserPackage userPackage = gson.fromJson(clientText, UserPackage.class);
       model.addUser(userPackage.getUser(), userPackage.getPassword());
       out.println("Success: you are now logged in");
     }
-    catch (IOException e)
-    {
-      e.printStackTrace();
-    }
     catch (Exception e)
     {
       e.printStackTrace();
-      e.getMessage();
+      out.println(e.getMessage());
     }
   }
 }

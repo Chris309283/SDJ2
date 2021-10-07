@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface TextManager extends Subject {
 
-    String toUppercase(String str);
+    String toUpperCase(String str);
     List<LogEntry> getLog();
+    String toLowerCase(String str);
+    String toCamelCase(String str);
 }

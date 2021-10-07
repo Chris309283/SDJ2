@@ -45,7 +45,7 @@ public class SocketClient implements Client {
     }
 
     @Override
-    public String toUppercase(String str) {
+    public String toUpperCase(String str) {
         try {
             Request response = request(str, "Uppercase");
             return (String)response.getArg();
@@ -64,6 +64,28 @@ public class SocketClient implements Client {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override public String toLowerCase(String str)
+    {
+        try {
+            Request response = request(str, "LowerCase");
+            return (String)response.getArg();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return str;
+    }
+
+    @Override public String toCamelCase(String str)
+    {
+        try {
+            Request response = request(str, "CamelCase");
+            return (String)response.getArg();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return str;
     }
 
     private Request request(String arg, String type) throws IOException, ClassNotFoundException {

@@ -15,28 +15,80 @@ public class ViewHandler {
     private ViewModelFactory vmf;
     private Scene logScene;
 
-    public ViewHandler(ViewModelFactory vmf) {
+    private ViewController currentlyActive;
+
+    public ViewHandler(ViewModelFactory vmf, Stage stage) {
+        this.stage = stage;
         this.vmf = vmf;
     }
 
-    public void start() {
-        stage = new Stage();
-        openToUppercase();
+//    public void start() {
+//        stage = new Stage();
+//        openToUppercase();
+//    }
+
+    public void start() throws IOException
+    {
+        Scene scene;
+        Parent root;
+
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../views/master/MasterView.fxml"));
+        root = loader.load();
+
+        ViewController ctrl = loader.getController();
+        currentlyActive = ctrl;
+        ctrl.init(this, vmf);
+
+        stage.setTitle("Converter");
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void openToUppercase() {
-        if (uppercaseScene == null) {
-            try {
-                Parent root = loadFXML("../views/uppercase/UppercaseView.fxml");
+//    public void openToUppercase() {
+//        if (uppercaseScene == null) {
+//            try {
+//                Parent root = loadFXML("../views/uppercase/UppercaseView.fxml");
+//
+//                stage.setTitle("Upper case");
+//                uppercaseScene = new Scene(root);
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//        stage.setScene(uppercaseScene);
+//        stage.show();
+//    }
 
-                stage.setTitle("Upper case");
-                uppercaseScene = new Scene(root);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+    public Parent getUpperCaseView() {
+        currentlyActive.reset();
+        return getRoot("../views/uppercase/UppercaseView.fxml");
+    }
+
+    public Parent getLowerCaseView() {
+        currentlyActive.reset();
+        return getRoot("../views/lowercase/LowercaseView.fxml");
+    }
+
+    public Parent getCamelCaseView() {
+        currentlyActive.reset();
+        return getRoot("../views/camelcase/CamelcaseView.fxml");
+    }
+
+    private Parent getRoot(String s) {
+        Parent root = null;
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource(s));
+            root = loader.load();
+            ViewController ctrl = loader.getController();
+            currentlyActive = ctrl;
+            ctrl.init(this, vmf);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        stage.setScene(uppercaseScene);
-        stage.show();
+        return root;
     }
 
     public void openLog() {

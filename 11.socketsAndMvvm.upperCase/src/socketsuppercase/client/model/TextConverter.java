@@ -7,9 +7,10 @@ import java.util.List;
 
 public interface TextConverter extends Subject {
 
-    String toUppercase(String text);
+    String toUpperCase(String text);
     List<LogEntry> getLogs();
-
+    String toLowerCase(String text);
+    String toCamelCase(String text);
 }
 
 

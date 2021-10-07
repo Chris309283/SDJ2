@@ -17,31 +17,33 @@ public class UserServer implements Runnable
   {
    this.model=model;
    this.welcomeSocket = new ServerSocket(PORT);
+   this.running = true;
   }
 
   public void close()
   {
-
+   running=false;
   }
 
   @Override public void run()
   {
     System.out.println("Starting server...");
-    while (true)
-    {
+
       try
       {
+        while (running)
+        {
         System.out.println("Waiting for clients...");
         Socket socket = welcomeSocket.accept();
         UserClientHandler userClientHandler = new UserClientHandler(socket,model);
         Thread t = new Thread(userClientHandler);
         t.start();
         System.out.println("A Client has been connected");
+        }
       }
       catch (IOException e)
       {
         e.printStackTrace();
       }
-    }
   }
 }

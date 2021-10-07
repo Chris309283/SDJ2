@@ -13,7 +13,7 @@ public class UppercaseApp extends Application {
         ClientFactory cf = new ClientFactory();
         ModelFactory mf = new ModelFactory(cf);
         ViewModelFactory vmf = new ViewModelFactory(mf);
-        ViewHandler vh = new ViewHandler(vmf);
+        ViewHandler vh = new ViewHandler(vmf,stage);
         vh.start();
     }
 }

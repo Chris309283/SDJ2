@@ -24,15 +24,14 @@ public class UserClient implements Model
     this.gson = new Gson();
   }
 
-  public void disconnect()
+  public void disconnect() throws IOException
   {
-
+   socket.close();
   }
 
   @Override public void login(String userName, String password)
       throws IllegalStateException, IllegalArgumentException
   {
-
     try
     {
       User user = new User(userName,password);
@@ -45,5 +44,6 @@ public class UserClient implements Model
     {
       e.printStackTrace();
     }
+
   }
 }

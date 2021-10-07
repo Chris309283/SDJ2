@@ -38,11 +38,17 @@ public class SocketHandler implements Runnable {
             if("Listener".equals(request.getType())) {
                 textManager.addListener("NewLogEntry", this::onNewLogEntry);
             } else if("Uppercase".equals(request.getType())) {
-                String result = textManager.toUppercase((String) request.getArg());
+                String result = textManager.toUpperCase((String) request.getArg());
                 outToClient.writeObject(new Request("Uppercase", result));
             } else if("FetchLog".equals(request.getType())) {
                 List<LogEntry> log = textManager.getLog();
                 outToClient.writeObject(new Request("FetchLog", log));
+            }else if("LowerCase".equals(request.getType())) {
+                String result = textManager.toLowerCase((String) request.getArg());
+                outToClient.writeObject(new Request("LowerCase", result));
+            }else if("CamelCase".equals(request.getType())) {
+                String result = textManager.toCamelCase((String) request.getArg());
+                outToClient.writeObject(new Request("CamelCase", result));
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

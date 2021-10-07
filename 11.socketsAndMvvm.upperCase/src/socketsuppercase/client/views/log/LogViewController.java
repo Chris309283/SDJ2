@@ -33,7 +33,12 @@ public class LogViewController implements ViewController {
         outputColumn.setCellValueFactory(new PropertyValueFactory<>("output"));
     }
 
+    @Override public void reset()
+    {
+
+    }
+
     public void onBackButton() {
-        vh.openToUppercase();
+        vh.getUpperCaseView();
     }
 }
