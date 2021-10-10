@@ -32,6 +32,15 @@ public class ViewHandler {
         Scene scene;
         Parent root;
 
+        scene = getMasterView();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public Scene getMasterView() throws IOException
+    {
+        Parent root;
+        Scene scene;
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../views/master/MasterView.fxml"));
         root = loader.load();
@@ -42,11 +51,10 @@ public class ViewHandler {
 
         stage.setTitle("Converter");
         scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        return scene;
     }
 
-//    public void openToUppercase() {
+    //    public void openToUppercase() {
 //        if (uppercaseScene == null) {
 //            try {
 //                Parent root = loadFXML("../views/uppercase/UppercaseView.fxml");

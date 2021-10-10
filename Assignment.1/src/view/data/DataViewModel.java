@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart;
 import mediator.TemperatureHubModel;
+import model.temperature.Temperature;
 import model.temperature.TemperatureList;
 
 import java.beans.PropertyChangeEvent;
@@ -67,12 +68,17 @@ public class DataViewModel
       }
       if (evt.getPropertyName().equals("t1Temp"))
       {
-        list1.clear();
-        for (int i = 0; i < t1TempList.getSize(); i++)
-        {
-          list1.add(new XYChart.Data<>(t1TempList.get(i).getTime(),
-              t1TempList.get(i).getTemp()));
-        }
+        Temperature t = (Temperature)evt.getNewValue();
+        XYChart.Data<String, Number> data = new XYChart.Data<>(
+            t.getTime(), t.getTemp());
+        list1.add(data);
+        System.out.println(t);
+//        list1.clear();
+//        for (int i = 0; i < t1TempList.getSize(); i++)
+//        {
+//          list1.add(new XYChart.Data<>(t1TempList.get(i).getTime(),
+//              t1TempList.get(i).getTemp()));
+//        }
       }
       if (evt.getPropertyName().equals("t2Temp"))
       {
