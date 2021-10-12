@@ -9,6 +9,8 @@ import socketsuppercase.client.core.ViewModelFactory;
 import socketsuppercase.shared.transferobjects.LogEntry;
 import socketsuppercase.client.views.ViewController;
 
+import java.io.IOException;
+
 public class LogViewController implements ViewController {
 
     // I can make these field public. Or make them private, and mark them with @FXML.
@@ -38,7 +40,8 @@ public class LogViewController implements ViewController {
 
     }
 
-    public void onBackButton() {
-        vh.getUpperCaseView();
+    public void onBackButton() throws IOException
+    {
+        vh.getMasterView();
     }
 }
