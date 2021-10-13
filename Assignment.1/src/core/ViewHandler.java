@@ -12,6 +12,8 @@ public class ViewHandler
 {
   private Stage mainStage;
   private ViewModelFactory vmf;
+  private Scene tempScene;
+  private Scene dataScene;
 
   public ViewHandler(ViewModelFactory vmf, Stage stage)
   {
@@ -23,9 +25,6 @@ public class ViewHandler
   {
     openTemperatureView();
   }
-
-  private Scene tempScene;
-  private Scene dataScene;
 
   public void openTemperatureView()
   {
