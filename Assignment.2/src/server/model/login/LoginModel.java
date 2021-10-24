@@ -1,15 +1,13 @@
 package server.model.login;
 
-public interface LoginModel
+import shared.transferobjects.User;
+import shared.util.Subject;
+
+import java.util.List;
+
+public interface LoginModel extends Subject
 {
-  public int getNumberOfUsers();
-  public User getUser(int index) throws IndexOutOfBoundsException;
-  public User getUserByName(String name);
-  public void addUser(User user)
-      throws IllegalStateException, IllegalArgumentException;
-  public void addUser(UserName userName, Password password)
-      throws IllegalStateException, IllegalArgumentException;
-  public void addUser(String userName, String password)
-      throws IllegalStateException, IllegalArgumentException;
-  public boolean contains(User user);
+  void newUser(User user);
+  List<User> getUsers();
+  void removeUser(User user);
 }

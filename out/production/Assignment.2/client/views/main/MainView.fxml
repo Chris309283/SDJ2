@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="646.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.views.main.MainViewController">
+   <children>
+      <ListView fx:id="userList" layoutX="14.0" layoutY="29.0" prefHeight="589.0" prefWidth="193.0" />
+      <TabPane fx:id="tabPane" layoutX="234.0" layoutY="29.0" prefHeight="589.0" prefWidth="640.0" />
+   </children>
+</AnchorPane>

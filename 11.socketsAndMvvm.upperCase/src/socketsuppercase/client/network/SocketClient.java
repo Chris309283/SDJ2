@@ -1,7 +1,7 @@
 package socketsuppercase.client.network;
 
 import socketsuppercase.shared.transferobjects.LogEntry;
-import socketsuppercase.shared.transferobjects.Request;
+import socketsuppercase.shared.transferobjects.Requestt;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
@@ -34,10 +34,10 @@ public class SocketClient implements Client {
 
     private void listenToServer(ObjectOutputStream outToServer, ObjectInputStream inFromServer) {
         try {
-            outToServer.writeObject(new Request("Listener", null));
+            outToServer.writeObject(new Requestt("Listener", null));
             while (true) {
-                Request request = (Request) inFromServer.readObject();
-                support.firePropertyChange(request.getType(), null, request.getArg());
+                Requestt requestt = (Requestt) inFromServer.readObject();
+                support.firePropertyChange(requestt.getType(), null, requestt.getArg());
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -47,7 +47,7 @@ public class SocketClient implements Client {
     @Override
     public String toUpperCase(String str) {
         try {
-            Request response = request(str, "Uppercase");
+            Requestt response = request(str, "Uppercase");
             return (String)response.getArg();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -58,7 +58,7 @@ public class SocketClient implements Client {
     @Override
     public List<LogEntry> getLog() {
         try {
-            Request response = request(null, "FetchLog");
+            Requestt response = request(null, "FetchLog");
             return (List<LogEntry>) response.getArg();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -69,7 +69,7 @@ public class SocketClient implements Client {
     @Override public String toLowerCase(String str)
     {
         try {
-            Request response = request(str, "LowerCase");
+            Requestt response = request(str, "LowerCase");
             return (String)response.getArg();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -80,7 +80,7 @@ public class SocketClient implements Client {
     @Override public String toCamelCase(String str)
     {
         try {
-            Request response = request(str, "CamelCase");
+            Requestt response = request(str, "CamelCase");
             return (String)response.getArg();
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -88,12 +88,12 @@ public class SocketClient implements Client {
         return str;
     }
 
-    private Request request(String arg, String type) throws IOException, ClassNotFoundException {
+    private Requestt request(String arg, String type) throws IOException, ClassNotFoundException {
         Socket socket = new Socket("localhost", 2910);
         ObjectOutputStream outToServer = new ObjectOutputStream(socket.getOutputStream());
         ObjectInputStream inFromServer = new ObjectInputStream(socket.getInputStream());
-        outToServer.writeObject(new Request(type, arg));
-        return (Request) inFromServer.readObject();
+        outToServer.writeObject(new Requestt(type, arg));
+        return (Requestt) inFromServer.readObject();
     }
 
     @Override

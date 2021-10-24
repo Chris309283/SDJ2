@@ -2,7 +2,7 @@ package socketsuppercase.server.networking;
 
 import socketsuppercase.server.model.TextManager;
 import socketsuppercase.shared.transferobjects.LogEntry;
-import socketsuppercase.shared.transferobjects.Request;
+import socketsuppercase.shared.transferobjects.Requestt;
 
 import java.beans.PropertyChangeEvent;
 import java.io.IOException;
@@ -34,21 +34,21 @@ public class SocketHandler implements Runnable {
     @Override
     public void run() {
         try {
-            Request request = (Request) inFromClient.readObject();
-            if("Listener".equals(request.getType())) {
+            Requestt requestt = (Requestt) inFromClient.readObject();
+            if("Listener".equals(requestt.getType())) {
                 textManager.addListener("NewLogEntry", this::onNewLogEntry);
-            } else if("Uppercase".equals(request.getType())) {
-                String result = textManager.toUpperCase((String) request.getArg());
-                outToClient.writeObject(new Request("Uppercase", result));
-            } else if("FetchLog".equals(request.getType())) {
+            } else if("Uppercase".equals(requestt.getType())) {
+                String result = textManager.toUpperCase((String) requestt.getArg());
+                outToClient.writeObject(new Requestt("Uppercase", result));
+            } else if("FetchLog".equals(requestt.getType())) {
                 List<LogEntry> log = textManager.getLog();
-                outToClient.writeObject(new Request("FetchLog", log));
-            }else if("LowerCase".equals(request.getType())) {
-                String result = textManager.toLowerCase((String) request.getArg());
-                outToClient.writeObject(new Request("LowerCase", result));
-            }else if("CamelCase".equals(request.getType())) {
-                String result = textManager.toCamelCase((String) request.getArg());
-                outToClient.writeObject(new Request("CamelCase", result));
+                outToClient.writeObject(new Requestt("FetchLog", log));
+            }else if("LowerCase".equals(requestt.getType())) {
+                String result = textManager.toLowerCase((String) requestt.getArg());
+                outToClient.writeObject(new Requestt("LowerCase", result));
+            }else if("CamelCase".equals(requestt.getType())) {
+                String result = textManager.toCamelCase((String) requestt.getArg());
+                outToClient.writeObject(new Requestt("CamelCase", result));
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -57,7 +57,7 @@ public class SocketHandler implements Runnable {
 
     private void onNewLogEntry(PropertyChangeEvent evt) {
         try {
-            outToClient.writeObject(new Request(evt.getPropertyName(), evt.getNewValue()));
+            outToClient.writeObject(new Requestt(evt.getPropertyName(), evt.getNewValue()));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,51 +1,43 @@
 package server.model.login;
 
+import shared.transferobjects.User;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
+import java.util.ArrayList;
+import java.util.List;
+
 public class LoginModelManager implements LoginModel
 {
-  private UserList users;
+  private List<User> users = new ArrayList<>();
+  private PropertyChangeSupport support = new PropertyChangeSupport(this);
 
-  public LoginModelManager()
+  @Override public synchronized void newUser(User user)
   {
-    this.users = new UserList();
+    users.add(user);
+    support.firePropertyChange("USER LIST MODIFIED", null, null);
   }
 
-  @Override public int getNumberOfUsers()
+  @Override public synchronized List<User> getUsers()
   {
-    return users.size();
+    return users;
   }
 
-  @Override public User getUser(int index) throws IndexOutOfBoundsException
+  @Override public synchronized void removeUser(User user)
   {
-    return users.getUser(index);
+    users.remove(user);
+    support.firePropertyChange("USER LIST MODIFIED", null, null);
   }
 
-  @Override public User getUserByName(String name)
+  @Override public void addListener(String eventName,
+      PropertyChangeListener listener)
   {
-    return users.getUserByName(name);
+    support.addPropertyChangeListener(eventName,listener);
   }
 
-  @Override public void addUser(User user)
-      throws IllegalStateException, IllegalArgumentException
+  @Override public void removeListener(String eventName,
+      PropertyChangeListener listener)
   {
-    users.addUser(user);
-    System.out.println("ADDED: " + user);
-  }
-
-  @Override public void addUser(String userName, String password)
-      throws IllegalStateException, IllegalArgumentException
-  {
-    addUser(new UserName(userName), new Password(password));
-  }
-
-  @Override public void addUser(UserName userName, Password password)
-      throws IllegalStateException, IllegalArgumentException
-  {
-    users.addUser(userName, password);
-    System.out.println("ADDED: " + new User(userName, password));
-  }
-
-  @Override public boolean contains(User user)
-  {
-    return users.contains(user);
+    support.addPropertyChangeListener(eventName,listener);
   }
 }

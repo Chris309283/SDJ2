@@ -8,9 +8,9 @@ import socketsuppercase.client.views.uppercase.UppercaseViewModel;
 public class ViewModelFactory {
 
     private final ModelFactory mf;
-    private CamelcaseViewModel camelcaseViewModel;
-    private LowercaseViewModel lowercaseViewModel;
-    private UppercaseViewModel uppercaseViewModel;
+    private final CamelcaseViewModel camelcaseViewModel;
+    private final LowercaseViewModel lowercaseViewModel;
+    private final UppercaseViewModel uppercaseViewModel;
     private LogViewModel logViewModel;
 
     public ViewModelFactory(ModelFactory mf) {

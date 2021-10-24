@@ -4,106 +4,73 @@ import client.views.ViewController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Tab;
 import javafx.stage.Stage;
+import shared.transferobjects.Message;
+import shared.transferobjects.User;
 
 import java.io.IOException;
 
 public class ViewHandler
 {
-  private Stage mainStage;
-  private ViewModelFactory vmf;
-  private Scene chatScene;
-  private Scene loginScene;
-  private Scene userListScene;
+  private ViewModelFactory viewModelFactory;
+  private Stage stage;
+  private Parent root;
 
-  public ViewHandler(Stage mainStage, ViewModelFactory vmf)
+  public ViewHandler(ViewModelFactory viewModelFactory)
   {
-    this.mainStage = mainStage;
-    this.vmf = vmf;
+    this.viewModelFactory = viewModelFactory;
+    this.stage = new Stage();
   }
 
-  public void start()
+  public void openMainView()
   {
-    openLoginView();
+    Scene scene = new Scene(getRoot("../views/main/mainview.fxml",null));
+    stage.setScene(scene);
+    stage.show();
   }
 
   public void openLoginView()
   {
-    try
-    {
-      if (loginScene == null)
-      {
-        loginScene = getScene("../views/login/LoginView.fxml");
-      }
-      changeScene("Login", loginScene);
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-    }
-    throw new RuntimeException("Failed to load login scene");
+    stage.setTitle("MSN");
+    Scene scene = new Scene(getRoot("../views/login/LoginView.fxml",null));
+    stage.setScene(scene);
+    stage.show();
   }
 
-  public void openChatView()
+  public void openChatTab(Tab allTab, User receiver, Message message)
   {
     try
     {
-      if (chatScene == null)
-      {
-        chatScene = getScene("../views/login/ChatView.fxml");
-      }
-      changeScene("Chat", chatScene);
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-    }
-    throw new RuntimeException("Failed to load chat scene");
-  }
-
-  public void openUserListView()
-  {
-    try
-    {
-      if (userListScene == null)
-      {
-        userListScene = getScene("../views/login/UserListView.fxml");
-      }
-      changeScene("server.model.login.User List", userListScene);
-    }
-    catch (Exception e)
-    {
-      e.printStackTrace();
-    }
-    throw new RuntimeException("Failed to load user list scene");
-  }
-
-  private void changeScene(String s, Scene scene)
-  {
-    mainStage.setTitle(s);
-    mainStage.setScene(scene);
-    mainStage.show();
-  }
-
-  private Scene getScene(String path)
-  {
-    try
-    {
-      FXMLLoader loader = new FXMLLoader();
-
-      loader.setLocation(getClass().getResource(path));
-      Parent root = loader.load();
-
-      ViewController view = loader.getController();
-      view.init(this, vmf);
-
-      return new Scene(root);
+      FXMLLoader loader = new FXMLLoader(getClass().getResource("../views/chat/chatTab.fxml"));
+      allTab.setContent(loader.load());
+      ViewController viewController = loader.getController();
+      viewController.init(this,viewModelFactory,stage,receiver,message);
     }
     catch (IOException e)
     {
       e.printStackTrace();
     }
-    throw new RuntimeException("Failed to create scene");
   }
+
+
+
+  private Parent getRoot(String path, User user)
+  {
+    try
+    {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource(path));
+      root = loader.load();
+      ViewController viewController = loader.getController();
+      viewController.init(this,viewModelFactory,stage,user,null);
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+    return root;
+  }
+
 
 }
