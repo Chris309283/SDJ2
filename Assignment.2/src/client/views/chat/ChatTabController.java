@@ -61,7 +61,6 @@ public class ChatTabController implements ViewController
 
   private void setText(Message message)
   {
-
     if (message!=null)
     {
       messageContent += "\n" + message.getSender().getNickName() + "> "
@@ -72,8 +71,21 @@ public class ChatTabController implements ViewController
 
   private void onNewMessage(PropertyChangeEvent propertyChangeEvent)
   {
-    Message message = (Message) propertyChangeEvent.getNewValue();
-    setText(message);
+//    Message message = (Message) propertyChangeEvent.getNewValue();
+//    setText(message);
+
+    Message newMessage = (Message) propertyChangeEvent.getNewValue();
+    if ((newMessage.getReceiver() == null) && receiver == null) {
+      setText(newMessage); // Send to ALL
+    } else if (newMessage.getReceiver() != null && receiver != null) {
+      if (newMessage.getReceiver().equals(receiver) && newMessage.getSender().equals(chatTabModel.getIdentity())) {
+        setText(newMessage); // Send private if I sent
+      } else if (newMessage.getReceiver().equals(chatTabModel.getIdentity()) && newMessage.getSender().equals(receiver)) {
+        setText(newMessage); // Send private sent to me
+      }
+
+    }
+
   }
 
   @Override public void reset()
