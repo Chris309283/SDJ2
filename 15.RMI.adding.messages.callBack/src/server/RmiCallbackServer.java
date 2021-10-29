@@ -26,8 +26,11 @@ public class RmiCallbackServer implements RemoteMessageList
   @Override public void addMessage(String message, RemoteSender sender)
       throws RemoteException
   {
-    messageList.add(message);
-    System.out.println(message);
-    sender.replyMessage("Thank you");
+    if (!message.equals("EXIT"))
+    {
+      messageList.add(message);
+      System.out.println(message);
+      sender.replyMessage("Thank you");
+    }
   }
 }
