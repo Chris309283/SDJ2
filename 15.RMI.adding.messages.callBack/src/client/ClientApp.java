@@ -19,5 +19,8 @@ public class ClientApp
       message = input.nextLine();
       client.send(message);
     } while (!message.equals("EXIT"));
+    System.out.println("exit");
+    input.close();
+    System.exit(0);
   }
 }

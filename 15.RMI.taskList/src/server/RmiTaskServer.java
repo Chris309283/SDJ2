@@ -1,5 +1,9 @@
 package server;
 
+import shared.RemoteTaskList;
+import shared.Task;
+import shared.TaskList;
+
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -12,9 +16,12 @@ public class RmiTaskServer implements RemoteTaskList
 {
   private TaskList taskList;
 
-  public RmiTaskServer()
+  public RmiTaskServer() throws RemoteException, MalformedURLException
   {
     this.taskList = new TaskList();
+    startRegistry();
+    startServer();
+    System.out.println("Server is running...");
   }
 
   private void startRegistry() throws RemoteException
@@ -37,16 +44,19 @@ public class RmiTaskServer implements RemoteTaskList
 
   @Override public void add(Task task) throws RemoteException
   {
+    System.out.println("Adding...");
     taskList.add(task);
   }
 
   @Override public Task get() throws RemoteException
   {
+    System.out.println("Getting...");
     return taskList.getAndRemoveNextTask();
   }
 
   @Override public int size() throws RemoteException
   {
+    System.out.println("Getting size...");
     return taskList.size();
   }
 }

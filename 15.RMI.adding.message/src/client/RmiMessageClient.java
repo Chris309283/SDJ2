@@ -1,10 +1,7 @@
 package client;
 
 import server.RemoteMessageList;
-
-import java.net.MalformedURLException;
 import java.rmi.Naming;
-import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
 public class RmiMessageClient
