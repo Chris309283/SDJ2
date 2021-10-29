@@ -1,18 +1,20 @@
 package server;
 
+import client.RemoteSender;
+
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
-public class RmiMessageServer implements RemoteMessageList
+public class RmiCallbackServer implements RemoteMessageList
 {
-  private ArrayList<String> messages;
+  private ArrayList<String> messageList;
 
-  public RmiMessageServer()
+  public RmiCallbackServer()
   {
-    this.messages = new ArrayList<>();
+    this.messageList = new ArrayList<>();
   }
 
   public void start() throws RemoteException, MalformedURLException
@@ -21,10 +23,11 @@ public class RmiMessageServer implements RemoteMessageList
     Naming.rebind("addMessage", this);
   }
 
-  @Override public void addMessage(String message) throws RemoteException
+  @Override public void addMessage(String message, RemoteSender sender)
+      throws RemoteException
   {
-    messages.add(message);
+    messageList.add(message);
     System.out.println(message);
-    System.out.println(messages);
+    sender.replyMessage("Thank you");
   }
 }

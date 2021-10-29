@@ -17,6 +17,6 @@ public class ClientApp
 
     System.out.println("Enter a string to convert: ");
     String capitalize = input.nextLine();
-    System.out.println(client.convert(uppercase, false));
+    System.out.println(client.convert(capitalize, false));
   }
 }

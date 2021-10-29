@@ -1,13 +1,15 @@
 package client;
 
+import java.net.MalformedURLException;
 import java.rmi.RemoteException;
 import java.util.Scanner;
 
 public class ClientApp
 {
-  public static void main(String[] args) throws RemoteException
+  public static void main(String[] args)
+      throws RemoteException, MalformedURLException
   {
-    RmiMessageClient client = new RmiMessageClient();
+    RmiCallbackClient client = new RmiCallbackClient();
 
     Scanner input = new Scanner(System.in);
     String message;

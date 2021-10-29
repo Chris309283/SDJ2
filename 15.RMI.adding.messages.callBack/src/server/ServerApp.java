@@ -12,7 +12,7 @@ public class ServerApp
       throws MalformedURLException, RemoteException
   {
     startRegistry();
-    RmiMessageServer server = new RmiMessageServer();
+    RmiCallbackServer server = new RmiCallbackServer();
     server.start();
     System.out.println("Server is Running...");
   }
