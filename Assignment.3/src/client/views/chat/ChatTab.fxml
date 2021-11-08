@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="555.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.views.chat.ChatTabController">
+   <children>
+      <Button fx:id="sendButton" layoutX="560.0" layoutY="451.0" mnemonicParsing="false" onAction="#sendButton" prefHeight="90.0" prefWidth="53.0" text="Send" />
+      <Label layoutX="27.0" layoutY="14.0" text="Chatting with: ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="userNameLabel" layoutX="143.0" layoutY="14.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="chatArea" editable="false" layoutX="27.0" layoutY="41.0" prefHeight="389.0" prefWidth="586.0" />
+      <TextArea fx:id="messageArea" layoutX="27.0" layoutY="451.0" prefHeight="90.0" prefWidth="529.0" />
+   </children>
+</AnchorPane>
