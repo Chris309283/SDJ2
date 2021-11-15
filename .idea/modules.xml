@@ -18,7 +18,12 @@
       <module fileurl="file://$PROJECT_DIR$/15.RMI.case/15.RMI.case.iml" filepath="$PROJECT_DIR$/15.RMI.case/15.RMI.case.iml" />
       <module fileurl="file://$PROJECT_DIR$/15.RMI.taskList/15.RMI.taskList.iml" filepath="$PROJECT_DIR$/15.RMI.taskList/15.RMI.taskList.iml" />
       <module fileurl="file://$PROJECT_DIR$/16.RMI.taskList.securityManager/16.RMI.taskList.securityManager.iml" filepath="$PROJECT_DIR$/16.RMI.taskList.securityManager/16.RMI.taskList.securityManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/19.adapter.fileWriter/19.adapter.fileWriter.iml" filepath="$PROJECT_DIR$/19.adapter.fileWriter/19.adapter.fileWriter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/19.adapter.queue/19.adapter.queue.iml" filepath="$PROJECT_DIR$/19.adapter.queue/19.adapter.queue.iml" />
+      <module fileurl="file://$PROJECT_DIR$/19.proxy.boundedList/19.proxy.boundedList.iml" filepath="$PROJECT_DIR$/19.proxy.boundedList/19.proxy.boundedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/19.proxy.logger/19.proxy.logger.iml" filepath="$PROJECT_DIR$/19.proxy.logger/19.proxy.logger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/19.proxy.seaBear/19.proxy.seaBear.iml" filepath="$PROJECT_DIR$/19.proxy.seaBear/19.proxy.seaBear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/19.proxy.threadSafeQueue/19.proxy.threadSafeQueue.iml" filepath="$PROJECT_DIR$/19.proxy.threadSafeQueue/19.proxy.threadSafeQueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization1/2.threads2.synchronization1.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization1/2.threads2.synchronization1.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" />
