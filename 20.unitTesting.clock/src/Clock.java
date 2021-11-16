@@ -74,9 +74,9 @@ public class Clock
    *
    * @return the second
    */
-  public int getSecond() //
+  public int getSecond() // edit
   {
-    return minute;
+    return second;
   }
 
   /**
@@ -94,7 +94,7 @@ public class Clock
    */
   public void set(int hour, int minute, int second) //
   {
-    if (hour < 0 || minute < 0 || second < 0 || hour > 59 || minute > 59
+    if (hour < 0 || minute < 0 || second < 0 || hour > 23 || minute > 59
         || second > 59)
     {
       throw new IllegalArgumentException();
