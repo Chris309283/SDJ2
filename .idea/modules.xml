@@ -32,6 +32,8 @@
       <module fileurl="file://$PROJECT_DIR$/21.producer&amp;consumer.blockingQueue-adapter/21.producer&amp;consumer.blockingQueue-adapter.iml" filepath="$PROJECT_DIR$/21.producer&amp;consumer.blockingQueue-adapter/21.producer&amp;consumer.blockingQueue-adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/21.producer&amp;consumer.carrot/21.producer&amp;consumer.carrot.iml" filepath="$PROJECT_DIR$/21.producer&amp;consumer.carrot/21.producer&amp;consumer.carrot.iml" />
       <module fileurl="file://$PROJECT_DIR$/21.producer&amp;consumer.cookieJar/21.producer&amp;consumer.cookieJar.iml" filepath="$PROJECT_DIR$/21.producer&amp;consumer.cookieJar/21.producer&amp;consumer.cookieJar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/22.reader&amp;writer.dinning/22.reader&amp;writer.dinning.iml" filepath="$PROJECT_DIR$/22.reader&amp;writer.dinning/22.reader&amp;writer.dinning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/22.reader&amp;writer.favor/22.reader&amp;writer.favor.iml" filepath="$PROJECT_DIR$/22.reader&amp;writer.favor/22.reader&amp;writer.favor.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" filepath="$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.dataVisualizer/3.b.observerPattern.dataVisualizer.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.dataVisualizer/3.b.observerPattern.dataVisualizer.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.b.observerPattern.doctorsWaitingRoom/3.b.observerPattern.doctorsWaitingRoom.iml" filepath="$PROJECT_DIR$/3.b.observerPattern.doctorsWaitingRoom/3.b.observerPattern.doctorsWaitingRoom.iml" />
