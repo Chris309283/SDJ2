@@ -9,7 +9,7 @@ public class Archive
   private static Archive archive;
   private static final Lock lock = new ReentrantLock();
 
-  public Archive()
+  private Archive()
   {
     logFile = new File("LogFile.txt");
   }
