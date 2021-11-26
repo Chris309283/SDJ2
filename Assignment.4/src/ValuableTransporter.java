@@ -1,15 +1,15 @@
+import Deposit.Deposit;
 import Mine.Valuable;
 
 import java.util.ArrayList;
-import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class ValuableTransporter implements Runnable
 {
   private ArrayList<Valuable> transportBag;
-  private BlockingQueue<Valuable> deposit;
+  private Deposit deposit;
 
-  public ValuableTransporter(BlockingQueue<Valuable> deposit)
+  public ValuableTransporter(Deposit deposit)
   {
     this.deposit = deposit;
     this.transportBag = new ArrayList<>();
@@ -28,22 +28,22 @@ public class ValuableTransporter implements Runnable
         {
           valuable = deposit.take();
         }
-        catch (InterruptedException e)
+        catch (Exception e)
         {
           e.printStackTrace();
-        }
-        transportBag.add(valuable);
+        } transportBag.add(valuable);
         System.out.println(
             "The Valuable Transporter took a " + valuable.getType() + " worth: "
                 + valuable.getValue());
         value += valuable.getValue();
       }
       while (value < ranNumber);
+      System.out.println("The Transporter took valuables worth: " + value);
       transportBag.clear();
       System.out.println("The Transporter has lost all the valuables");
       try
       {
-        Thread.sleep(5000);
+        Thread.sleep(10000);
       }
       catch (InterruptedException e)
       {

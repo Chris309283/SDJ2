@@ -1,13 +1,11 @@
-import Mine.Valuable;
-
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.BlockingQueue;
+import Deposit.Deposit;
+import Deposit.BlockingQueue;
 
 public class TEST
 {
   public static void main(String[] args)
   {
-    BlockingQueue<Valuable> deposit = new ArrayBlockingQueue<>(500);
+    Deposit deposit = new BlockingQueue(10);
    Miner miner = new Miner(deposit);
    ValuableTransporter valuableTransporter = new ValuableTransporter(deposit);
 
