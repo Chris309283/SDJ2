@@ -28,10 +28,12 @@
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization2/2.threads2.synchronization2.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" filepath="$PROJECT_DIR$/2.threads2.synchronization3/2.threads2.synchronization3.iml" />
       <module fileurl="file://$PROJECT_DIR$/20.unitTesting.clock/20.unitTesting.clock.iml" filepath="$PROJECT_DIR$/20.unitTesting.clock/20.unitTesting.clock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/21.Blockingqueuetroels/21.Blockingqueuetroels.iml" filepath="$PROJECT_DIR$/21.Blockingqueuetroels/21.Blockingqueuetroels.iml" />
       <module fileurl="file://$PROJECT_DIR$/21.producer&amp;consumer.blockingQueue/21.producer&amp;consumer.blockingQueue.iml" filepath="$PROJECT_DIR$/21.producer&amp;consumer.blockingQueue/21.producer&amp;consumer.blockingQueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/21.producer&amp;consumer.blockingQueue-adapter/21.producer&amp;consumer.blockingQueue-adapter.iml" filepath="$PROJECT_DIR$/21.producer&amp;consumer.blockingQueue-adapter/21.producer&amp;consumer.blockingQueue-adapter.iml" />
       <module fileurl="file://$PROJECT_DIR$/21.producer&amp;consumer.carrot/21.producer&amp;consumer.carrot.iml" filepath="$PROJECT_DIR$/21.producer&amp;consumer.carrot/21.producer&amp;consumer.carrot.iml" />
       <module fileurl="file://$PROJECT_DIR$/21.producer&amp;consumer.cookieJar/21.producer&amp;consumer.cookieJar.iml" filepath="$PROJECT_DIR$/21.producer&amp;consumer.cookieJar/21.producer&amp;consumer.cookieJar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/22.ReaderWriterProblemTroels/22.ReaderWriterProblemTroels.iml" filepath="$PROJECT_DIR$/22.ReaderWriterProblemTroels/22.ReaderWriterProblemTroels.iml" />
       <module fileurl="file://$PROJECT_DIR$/22.reader&amp;writer.dinning/22.reader&amp;writer.dinning.iml" filepath="$PROJECT_DIR$/22.reader&amp;writer.dinning/22.reader&amp;writer.dinning.iml" />
       <module fileurl="file://$PROJECT_DIR$/22.reader&amp;writer.favor/22.reader&amp;writer.favor.iml" filepath="$PROJECT_DIR$/22.reader&amp;writer.favor/22.reader&amp;writer.favor.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" filepath="$PROJECT_DIR$/3.a.mysteryTopic.trafficLight/3.a.mysteryTopic.trafficLight.iml" />
@@ -55,7 +57,7 @@
       <module fileurl="file://$PROJECT_DIR$/Assignment.3/Assignment.3.iml" filepath="$PROJECT_DIR$/Assignment.3/Assignment.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Assignment.4/Assignment.4.iml" filepath="$PROJECT_DIR$/Assignment.4/Assignment.4.iml" />
       <module fileurl="file://$PROJECT_DIR$/DSB/DSB.iml" filepath="$PROJECT_DIR$/DSB/DSB.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sdj2.iml" filepath="$PROJECT_DIR$/sdj2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SDJ2.iml" filepath="$PROJECT_DIR$/SDJ2.iml" />
     </modules>
   </component>
 </project>

@@ -41,7 +41,6 @@ public class UIPersonStorage
       }
       else
         System.out.println("Invalid Choice");
-
     }
   }
 }

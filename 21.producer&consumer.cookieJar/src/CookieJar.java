@@ -11,35 +11,33 @@ public class CookieJar
     this.traySize = traySize;
   }
 
-  public void startBaking(String type)
+  public synchronized void startBaking()
   {
-    try
+
+  }
+
+  public synchronized void finishedBaking(String typeOfCookie)
+  {
+    while (true)
     {
-      wait(5000);
-      finishedBaking(type);
-      System.out.println("Started baking " + type + " cookies!");
-    }
-    catch (InterruptedException e)
-    {
-      e.printStackTrace();
+
     }
   }
 
-  private void finishedBaking(String type)
+  public synchronized void eat()
   {
-    for (int i = 0; i < traySize; i++)
+    while (jar.size() <= 0)
     {
-      jar.add(new Cookie(type));
-    }
-    System.out.println("Cookies " + type + " put in the jar!");
-  }
-
-  public void eat()
-  {
-    if (!jar.isEmpty())
-    {
+      try
+      {
+        wait();
+      }
+      catch (InterruptedException e)
+      {
+        e.printStackTrace();
+      }
+      System.out.println(Thread.currentThread().getName() + " is eating a cookie");
       jar.remove(0);
-      System.out.println("Eating Cookie!");
     }
   }
 }

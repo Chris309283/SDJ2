@@ -5,6 +5,7 @@ import test.ReadWrite;
 public class FavorReaders implements ReadWrite
 {
   private int readers, writers;
+  private boolean activeWriter;
 
   public FavorReaders()
   {
@@ -55,7 +56,7 @@ public class FavorReaders implements ReadWrite
     }
     System.out.println(Thread.currentThread().getName() + " Writing");
     writers++;
-   // System.out.println("Writers: " + writers);
+
   }
 
   @Override public synchronized void releaseWrite()

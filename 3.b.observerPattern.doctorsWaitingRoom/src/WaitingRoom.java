@@ -32,7 +32,6 @@ public class WaitingRoom implements PropertyChangeSubject, Runnable
       PropertyChangeListener listener)
   {
     support.removePropertyChangeListener(listener);
-
   }
 
   @Override public void run()

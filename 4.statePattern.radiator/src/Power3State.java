@@ -12,7 +12,7 @@ public class Power3State implements RadiatorState
       }
       catch (InterruptedException e)
       {
-        System.out.println("Power state decreased manually");
+        System.out.println("Power state decreased automatically");
       }
       radiator.setPowerState(new Power2State());
     };

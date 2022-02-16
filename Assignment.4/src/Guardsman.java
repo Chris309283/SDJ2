@@ -1,11 +1,19 @@
+import Mine.Valuable;
+
+import java.util.ArrayList;
+
 public class Guardsman implements TreasureRoomDoor
 {
   private int writers, readers;
+  private TreasureRoom treasureRoom;
+  private Archive archive;
 
   public Guardsman()
   {
-    writers = 0;
-    readers = 0;
+    this.treasureRoom = new TreasureRoom();
+    this.writers = 0;
+    this.readers = 0;
+    this.archive = Archive.getInstance();
   }
 
   @Override public synchronized void acquiredRead()
@@ -14,7 +22,7 @@ public class Guardsman implements TreasureRoomDoor
     {
       while (writers > 0)
       {
-        System.out.println(
+        archive.log(
             Thread.currentThread().getName() + " WAITING" + "(Readers: "
                 + readers + ")");
         wait();
@@ -24,14 +32,14 @@ public class Guardsman implements TreasureRoomDoor
     {
       e.printStackTrace();
     }
-    System.out.println(Thread.currentThread().getName() + " Reading");
+    archive.log(Thread.currentThread().getName() + " Reading");
     readers++;
   }
 
   @Override public synchronized void releaseRead()
   {
     readers--;
-    System.out.println(Thread.currentThread().getName() + " has been released from reading");
+    archive.log(Thread.currentThread().getName() + " has been released from reading");
     if (readers == 0)
     {
       notify();
@@ -44,7 +52,7 @@ public class Guardsman implements TreasureRoomDoor
     {
       try
       {
-        System.out.println(Thread.currentThread().getName() + " WAIT" +"(Writers: " + writers+")");
+        archive.log(Thread.currentThread().getName() + " WAIT" +"(Writers: " + writers+")");
         wait();
       }
       catch (InterruptedException e)
@@ -52,14 +60,47 @@ public class Guardsman implements TreasureRoomDoor
         e.printStackTrace();
       }
     }
-    System.out.println(Thread.currentThread().getName() + " Writing");
+    archive.log(Thread.currentThread().getName() + " Writing");
     writers++;
   }
 
   @Override public synchronized void releaseWrite()
   {
    writers--;
-    System.out.println(Thread.currentThread().getName() + " has been released from writing");
+    archive.log(Thread.currentThread().getName() + " has been released from writing");
     notifyAll();
+  }
+
+  @Override public synchronized void add(Runnable character,
+      ArrayList<Valuable> valuableTransportBag)
+  {
+    if (character instanceof King || character instanceof ValuableTransporter)
+    {
+      treasureRoom.add(character,valuableTransportBag);
+    }
+    else
+    archive.log("Access denied");
+  }
+
+  @Override public synchronized Valuable retrieve(Runnable character)
+  {
+    if (character instanceof King)
+    {
+      return treasureRoom.retrieve(character);
+    }
+    else
+      archive.log("Access denied");
+    return null;
+  }
+
+  @Override public synchronized int look(Runnable character)
+  {
+    if (character instanceof King || character instanceof ValuableTransporter || character instanceof Accountant)
+    {
+      return treasureRoom.look(character);
+    }
+    else
+      archive.log("Access denied");
+    return -1;
   }
 }

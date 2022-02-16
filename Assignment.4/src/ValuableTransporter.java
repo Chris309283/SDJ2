@@ -8,15 +8,22 @@ public class ValuableTransporter implements Runnable
 {
   private ArrayList<Valuable> transportBag;
   private Deposit deposit;
+  private String name;
+  private TreasureRoomDoor treasure;
 
-  public ValuableTransporter(Deposit deposit)
+  public ValuableTransporter(String name, Deposit deposit,
+      TreasureRoomDoor treasure)
   {
+    this.treasure = treasure;
     this.deposit = deposit;
     this.transportBag = new ArrayList<>();
+    this.name = name;
   }
 
   @Override public void run()
   {
+    Archive archive = Archive.getInstance();
+    Thread.currentThread().setName(name);
     while (true)
     {
       int ranNumber = ThreadLocalRandom.current().nextInt(50, 200 + 1);
@@ -31,16 +38,21 @@ public class ValuableTransporter implements Runnable
         catch (Exception e)
         {
           e.printStackTrace();
-        } transportBag.add(valuable);
-        System.out.println(
+        }
+        transportBag.add(valuable);
+        archive.log(
             "The Valuable Transporter took a " + valuable.getType() + " worth: "
                 + valuable.getValue());
         value += valuable.getValue();
       }
       while (value < ranNumber);
-      System.out.println("The Transporter took valuables worth: " + value);
+      archive.log("The Transporter took valuables worth: " + value);
+      treasure.acquireWrite();
+      treasure.add(this, transportBag);
+      treasure.releaseWrite();
       transportBag.clear();
-      System.out.println("The Transporter has lost all the valuables");
+      archive.log("The Transporter put the valuables in the treasure room");
+      /*  archive.log("The Transporter has lost all the valuables");*/
       try
       {
         Thread.sleep(10000);

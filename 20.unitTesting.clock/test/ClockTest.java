@@ -53,21 +53,17 @@ class ClockTest
     assertEquals("7:41:9", getClock(clock));
   }
 
-  @Test void setBoundary()
+  @Test void setUpperBoundary()
   {
-    System.out.println("setBoundary()");
-    System.out.println("Lower left boundary -1");
-    assertThrows(IllegalArgumentException.class, () -> {
-      clock.set(0, 0, -1);
-    });
-    assertThrows(IllegalArgumentException.class, () -> {
-      clock.set(0, -1, 0);
-    });
-    assertThrows(IllegalArgumentException.class, () -> {
-      clock.set(-1, 0, 0);
-    });
+    System.out.println("Upper left boundary 58 and 22");
+    clock.set(0, 0, 58);
+    assertEquals("0:0:58", getClock(clock));
+    clock.set(0, 58, 0);
+    assertEquals("0:58:0", getClock(clock));
+    clock.set(22, 0, 0);
+    assertEquals("22:0:0", getClock(clock));
 
-    System.out.println("Upper left boundary 59 and 23");
+    System.out.println("Upper boundary 59 and 23");
     clock.set(0, 0, 59);
     assertEquals("0:0:59", getClock(clock));
     clock.set(0, 59, 0);
@@ -84,6 +80,23 @@ class ClockTest
     });
     assertThrows(IllegalArgumentException.class, () -> {
       clock.set(24, 0, 0);
+    });
+  }
+
+
+
+  @Test void setLowerBoundary()
+  {
+    System.out.println("setBoundary()");
+    System.out.println("Lower left boundary -1");
+    assertThrows(IllegalArgumentException.class, () -> {
+      clock.set(0, 0, -1);
+    });
+    assertThrows(IllegalArgumentException.class, () -> {
+      clock.set(0, -1, 0);
+    });
+    assertThrows(IllegalArgumentException.class, () -> {
+      clock.set(-1, 0, 0);
     });
   }
 

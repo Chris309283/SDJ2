@@ -6,22 +6,25 @@ public class Miner implements Runnable
 {
   private Deposit deposit;
   private Mine mine;
+  private String name;
 
-  public Miner(Deposit deposit)
+  public Miner(String name,Deposit deposit, Mine mine)
   {
     this.deposit = deposit;
-    this.mine = new Mine();
+    this.mine = mine;
+    this.name = name;
   }
 
   @Override public void run()
   {
+    Thread.currentThread().setName(name);
+    Archive archive = Archive.getInstance();
 try
 {
   while (true)
   {
-
     Valuable valuable = mine.mineValuable();
-    System.out.println("Miner mined a " + valuable.getType() + " with a value of " + valuable.getValue());
+    archive.log("Miner mined a " + valuable.getType() + " with a value of " + valuable.getValue());
     deposit.put(valuable);
     Thread.sleep(500);
   }
